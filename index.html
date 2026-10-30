@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Henrique Oliveira | Consórcio Volkswagen sem juros</title>
+<meta name="description" content="Consórcio Volkswagen com a Embracon e outras linhas de consórcio, com atendimento direto pelo WhatsApp com o consultor Henrique Miranda de Oliveira. Simulação sem compromisso.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#071631">
+<meta property="og:title" content="Henrique Oliveira | Consórcio Volkswagen">
+<meta property="og:description" content="Seu Volkswagen planejado, sem juros. Simulação sem compromisso pelo WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/henrique.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* paleta do Henrique (marinho + dourado), refinada */
+    --navy-0: #050f24;
+    --navy: #0a1f44;
+    --navy-2: #102a5c;
+    --navy-3: #16356f;
+    --surface: #0e2550;
+    --gold: #c9a24b;
+    --gold-2: #e3cc8e;
+    --gold-deep: #a9832f;
+    --paper: #f5f7fb;
+    --paper-2: #e9eef6;
+    --ink: #f3f5fa;
+    --ink-dark: #10213f;
+    --muted: rgba(243, 245, 250, .66);
+    --muted-dark: #5a6a85;
+    --line: rgba(243, 245, 250, .12);
+    --line-dark: #dfe5ef;
+    --wa: #25d366;
+    --sans: "Archivo", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --pad: clamp(16px, 4vw, 56px);
+    --max: 1240px;
+    --sec-pad: clamp(84px, 10vw, 140px);
+    --head-gap: clamp(36px, 4vw, 56px);
+    --ease: cubic-bezier(.2, .8, .2, 1);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--navy-0); -webkit-text-size-adjust: 100%; }
+  body { background: var(--navy-0); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+  [id] { scroll-margin-top: 80px; }
+  .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+  .label { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* grão de filme na página inteira */
+  body::after {
+    content: ""; position: fixed; inset: -50%; z-index: 100; pointer-events: none; opacity: .05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- botões ---------- */
+  .btn {
+    position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 54px; padding: 0 26px; border-radius: 6px; overflow: hidden; isolation: isolate;
+    font-weight: 700; font-size: 15.5px; letter-spacing: .005em; white-space: nowrap;
+    transition: transform .25s var(--ease), background .25s, border-color .25s, color .25s, box-shadow .25s;
+  }
+  .btn svg { width: 20px; height: 20px; flex: none; }
+  .btn:active { transform: scale(.98); }
+  .btn--gold { background: var(--gold); color: var(--navy-0); box-shadow: 0 10px 30px -12px rgba(201, 162, 75, .7), inset 0 1px 0 rgba(255,255,255,.35); }
+  .btn--gold::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.45) 50%, transparent 70%);
+    transform: translateX(-120%); transition: transform .7s var(--ease);
+  }
+  .btn--gold:hover { background: var(--gold-2); transform: translateY(-2px); }
+  .btn--gold:hover::before { transform: translateX(120%); }
+  .btn--line { border: 1px solid var(--line); color: var(--ink); }
+  .btn--line:hover { border-color: var(--gold); color: var(--gold-2); }
+  .btn--navy { background: var(--navy); color: #fff; }
+  .btn--navy:hover { background: var(--navy-3); transform: translateY(-2px); }
+  .btn--sm { min-height: 42px; padding: 0 16px; font-size: 14px; }
+
+  /* ---------- topo ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(5, 15, 36, .94); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 20px; }
+  .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .brand__mark { width: 38px; height: 38px; border-radius: 50%; overflow: hidden; flex: none; border: 1px solid rgba(201,162,75,.6); box-shadow: 0 0 0 3px rgba(201,162,75,.12); }
+  .brand__mark img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; }
+  .brand strong { display: block; font-weight: 800; font-stretch: 112%; font-size: 16px; letter-spacing: -.01em; line-height: 1.1; white-space: nowrap; }
+  .brand small { display: block; font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold-2); opacity: .85; margin-top: 3px; }
+  .menu { display: flex; gap: 30px; font-size: 14.5px; color: var(--muted); }
+  .menu a { position: relative; padding: 6px 0; transition: color .3s; }
+  .menu a:hover { color: var(--ink); }
+  .menu a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; border-radius: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
+  .menu a:hover::after { transform: scaleX(1); }
+
+  /* ---------- herói ---------- */
+  .hero { position: relative; overflow: hidden; background: radial-gradient(120% 90% at 85% 10%, #13336c 0%, var(--navy) 38%, var(--navy-0) 100%); }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .55;
+    background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(70% 70% at 70% 30%, #000, transparent 75%); mask-image: radial-gradient(70% 70% at 70% 30%, #000, transparent 75%);
+  }
+  .hero .wrap { position: relative; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: clamp(32px, 5vw, 72px); align-items: center; padding-top: clamp(44px, 6vw, 84px); padding-bottom: clamp(70px, 8vw, 120px); }
+  .chip {
+    display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 12px; margin-bottom: 26px;
+    border-radius: 999px; font-size: 13.5px; font-weight: 600; color: var(--ink);
+    border: 1px solid rgba(201,162,75,.42); background: rgba(201,162,75,.09);
+  }
+  .chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(201,162,75,.22); flex: none; }
+  .hero h1 {
+    font-weight: 900; font-stretch: 114%; text-transform: uppercase; text-wrap: balance;
+    font-size: clamp(38px, 4.3vw, 64px); line-height: .95; letter-spacing: -.035em;
+  }
+  .hero h1 em { font-style: normal; color: var(--gold); position: relative; white-space: nowrap; }
+  .hero h1 em::after { content: ""; position: absolute; left: 0; right: 0; bottom: .02em; height: .09em; background: currentColor; opacity: .35; border-radius: 2px; }
+  .hero__lead { margin-top: 26px; max-width: 530px; font-size: clamp(17px, 1.35vw, 19px); color: var(--muted); }
+  .hero__lead strong { color: var(--ink); font-weight: 600; }
+  .hero__actions { display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap; }
+  .hero__meta { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 0; margin-top: 44px; max-width: 620px; border-top: 1px solid var(--line); }
+  .hero__meta > div { padding: 22px 30px 0 0; margin-right: 30px; border-right: 1px solid var(--line); }
+  .hero__meta > div:last-child { border-right: 0; margin-right: 0; }
+  .hero__meta strong { display: block; font-size: clamp(22px, 2.1vw, 28px); font-weight: 800; font-stretch: 112%; letter-spacing: -.02em; line-height: 1.05; }
+  .hero__meta strong sup { font-size: .5em; color: var(--gold-2); vertical-align: .9em; margin-left: 1px; }
+  .hero__meta span { display: block; margin-top: 6px; color: var(--muted); font-size: 13.5px; line-height: 1.35; }
+
+  .portrait { position: relative; justify-self: end; width: 100%; max-width: 470px; }
+  .portrait::before {
+    content: ""; position: absolute; inset: 8% -10% -6% 4%; border-radius: 50%; z-index: 0;
+    background: radial-gradient(closest-side, rgba(201,162,75,.38), rgba(201,162,75,.08) 60%, transparent);
+    filter: blur(30px);
+  }
+  .portrait__frame { position: relative; z-index: 1; aspect-ratio: 4 / 5; border-radius: 28px; overflow: hidden; background: var(--navy-2); box-shadow: 0 40px 80px -30px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.08); }
+  .portrait__frame img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; transform: scale(1.02); }
+  .portrait__frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(5,15,36,.88) 100%); }
+  .portrait__name { position: absolute; z-index: 2; left: 26px; right: 26px; bottom: 24px; }
+  .portrait__name strong { display: block; font-size: 20px; font-weight: 800; font-stretch: 108%; letter-spacing: -.01em; }
+  .portrait__name span { display: block; color: var(--gold-2); margin-top: 4px; }
+  .ticket {
+    position: absolute; z-index: 3; left: -56px; top: 46%; width: 272px;
+    display: grid; grid-template-columns: 74px 1fr; gap: 12px; align-items: center; padding: 10px 14px 10px 10px;
+    background: rgba(245,247,251,.97); color: var(--ink-dark); border-radius: 14px;
+    box-shadow: 0 24px 50px -18px rgba(0,0,0,.65); transition: transform .4s var(--ease);
+  }
+  .ticket:hover { transform: translateY(-4px) rotate(-1deg); }
+  .ticket img { width: 74px; height: 52px; object-fit: cover; border-radius: 8px; }
+  .ticket b { display: block; font-weight: 800; font-stretch: 110%; font-size: 15px; line-height: 1.1; }
+  .ticket small { display: block; font-size: 12.5px; color: var(--muted-dark); line-height: 1.3; margin-top: 3px; }
+  .ticket small em { white-space: nowrap; font-style: normal; font-weight: 700; color: var(--ink-dark); }
+  .seal {
+    position: absolute; z-index: 3; right: -18px; top: 26px; width: 104px; height: 104px; border-radius: 50%;
+    display: grid; place-items: center; text-align: center; background: var(--gold); color: var(--navy-0);
+    box-shadow: 0 18px 40px -12px rgba(201,162,75,.6); transform: rotate(8deg);
+  }
+  .seal b { display: block; font-weight: 900; font-stretch: 120%; font-size: 30px; line-height: .9; letter-spacing: -.03em; }
+  .seal span { display: block; font-size: 10.5px; font-weight: 700; line-height: 1.15; text-transform: uppercase; letter-spacing: .02em; margin-top: 3px; }
+
+  /* faixa de linhas */
+  .strip { background: var(--navy-0); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; padding: 22px 0; }
+  .strip__track { display: flex; width: max-content; list-style: none; animation: slide 50s linear infinite; }
+  .strip li { display: flex; align-items: center; gap: 28px; padding-right: 28px; white-space: nowrap; font-weight: 800; font-stretch: 115%; text-transform: uppercase; font-size: 17px; letter-spacing: .01em; color: rgba(243,245,250,.48); }
+  .strip li::after { content: ""; width: 7px; height: 7px; transform: rotate(45deg); background: var(--gold); opacity: .7; }
+  .strip li b { color: var(--ink); font-weight: 800; }
+  @keyframes slide { to { transform: translateX(-50%); } }
+
+  /* ---------- seções ---------- */
+  .sec { position: relative; padding: var(--sec-pad) 0 calc(var(--sec-pad) * .72); }
+  .panel { margin-top: -36px; border-radius: 36px 36px 0 0; box-shadow: 0 -30px 60px -30px rgba(0,0,0,.45); }
+  .sec--paper { background: linear-gradient(180deg, #fff 0, var(--paper) 260px); color: var(--ink-dark); }
+  .sec--navy { background: linear-gradient(180deg, var(--navy) 0, var(--navy-0) 420px); }
+  .sec--deep { background: var(--navy-0); }
+  .sec-head { display: flex; justify-content: space-between; align-items: end; gap: 28px 48px; margin-bottom: var(--head-gap); flex-wrap: wrap; }
+  .sec-head .label { display: block; color: var(--gold); margin-bottom: 16px; }
+  .sec--paper .sec-head .label { color: var(--gold-deep); }
+  .sec h2 { font-weight: 900; font-stretch: 116%; text-transform: uppercase; text-wrap: balance; font-size: clamp(32px, 4.4vw, 58px); line-height: .96; letter-spacing: -.03em; max-width: 760px; }
+  .lead { max-width: 420px; font-size: clamp(16px, 1.15vw, 18px); color: var(--muted); }
+  .sec--paper .lead { color: var(--muted-dark); }
+
+  /* ---------- ofertas ---------- */
+  .offers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .offer {
+    position: relative; display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line-dark); border-radius: 20px; overflow: hidden;
+    box-shadow: 0 1px 0 rgba(10,31,68,.04), 0 20px 40px -28px rgba(10,31,68,.35);
+    transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+  }
+  .offer:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(10,31,68,.45); }
+  .offer__media { position: relative; aspect-ratio: 900 / 440; overflow: hidden; background: var(--navy); }
+  .offer__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+  .offer:hover .offer__media img { transform: scale(1.05); }
+  .offer__tag { position: absolute; left: 14px; top: 14px; padding: 5px 10px; border-radius: 999px; background: rgba(5,15,36,.72); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color: #fff; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+  .offer__zoom { position: absolute; right: 12px; top: 12px; height: 34px; padding: 0 12px 0 10px; display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; background: rgba(255,255,255,.92); color: var(--ink-dark); font-size: 12.5px; font-weight: 700; opacity: .92; transition: opacity .3s, transform .3s var(--ease); }
+  .offer__zoom svg { width: 15px; height: 15px; }
+  .offer__zoom:hover { opacity: 1; transform: scale(1.04); }
+  .offer__body { display: flex; flex-direction: column; flex: 1; padding: 22px 22px 22px; }
+  .offer h3 { font-weight: 900; font-stretch: 118%; text-transform: uppercase; font-size: 30px; line-height: 1; letter-spacing: -.03em; }
+  .offer__credit { margin-top: 6px; color: var(--muted-dark); font-size: 14.5px; }
+  .offer__credit b { color: var(--ink-dark); font-weight: 800; }
+  .offer__price { margin-top: 18px; padding: 16px 0; border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .offer__price span { font-size: 13px; color: var(--muted-dark); }
+  .offer__price strong { font-weight: 900; font-stretch: 112%; font-size: 26px; letter-spacing: -.02em; color: var(--navy); }
+  .offer__price strong sup { font-size: .5em; color: var(--gold-deep); vertical-align: .9em; }
+  .offer__specs { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0 20px; font-size: 13.5px; color: var(--muted-dark); }
+  .offer__specs b { display: block; color: var(--ink-dark); font-size: 15px; font-weight: 800; }
+  .offer .btn { margin-top: auto; width: 100%; }
+
+  .offer--feature { grid-column: span 2; display: grid; grid-template-columns: 1.25fr 1fr; }
+  .offer--feature .offer__media { aspect-ratio: auto; min-height: 100%; }
+  .offer--feature .offer__media img { object-position: 42% 85%; }
+  .offer--feature .offer__body { padding: 30px; }
+  .offer--feature h3 { font-size: 46px; }
+  .offer--feature .offer__price strong { font-size: 36px; }
+  .offer--feature .offer__badge { display: inline-flex; align-self: flex-start; margin-bottom: 14px; padding: 6px 12px; border-radius: 999px; background: rgba(201,162,75,.16); color: var(--gold-deep); font-weight: 700; font-size: 12.5px; }
+
+  .note { margin-top: 26px; max-width: 900px; font-size: 13px; color: var(--muted-dark); }
+  .carousel-ui { display: none; }
+
+  /* ---------- outras linhas ---------- */
+  .lines-grid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+  .lines-grid .sec-head { position: sticky; top: 110px; display: block; margin: 0; }
+  .lines-grid .lead { margin-top: 20px; }
+  .lines-grid .partner { display: inline-flex; align-items: center; gap: 10px; margin-top: 28px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 10px; color: var(--muted); font-size: 14px; }
+  .lines-grid .partner b { color: var(--ink); }
+  .tech { list-style: none; border-top: 1px solid var(--line); }
+  .tech li { position: relative; display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 20px; align-items: center; padding: 26px 0; border-bottom: 1px solid var(--line); }
+  .tech li::before { content: ""; position: absolute; left: 0; bottom: -1px; height: 1px; width: 100%; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .7s var(--ease); }
+  .tech li:hover::before { transform: scaleX(1); }
+  .tech__ico { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; background: rgba(201,162,75,.1); border: 1px solid rgba(201,162,75,.28); color: var(--gold); }
+  .tech__ico svg { width: 26px; height: 26px; }
+  .tech h3 { font-size: 21px; font-weight: 800; font-stretch: 108%; letter-spacing: -.01em; line-height: 1.15; }
+  .tech p { color: var(--muted); font-size: 15px; margin-top: 4px; }
+  .tech a { display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 16px; border-radius: 6px; border: 1px solid var(--line); font-weight: 700; font-size: 14px; white-space: nowrap; transition: border-color .3s, color .3s, background .3s; }
+  .tech a svg { width: 16px; height: 16px; }
+  .tech a:hover { border-color: var(--gold); color: var(--gold-2); background: rgba(201,162,75,.06); }
+
+  /* ---------- como funciona ---------- */
+  .steps { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; list-style: none; counter-reset: s; }
+  .steps::before { content: ""; position: absolute; left: 30px; right: 30px; top: 30px; height: 2px; background: repeating-linear-gradient(90deg, rgba(169,131,47,.55) 0 8px, transparent 8px 16px); }
+  .step { position: relative; }
+  .step__n { position: relative; z-index: 1; width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; background: var(--navy); color: var(--gold-2); font-weight: 900; font-stretch: 120%; font-size: 22px; box-shadow: 0 0 0 8px var(--paper); margin-bottom: 26px; }
+  .step h3 { font-size: 20px; font-weight: 800; font-stretch: 106%; letter-spacing: -.01em; margin-bottom: 8px; }
+  .step p { color: var(--muted-dark); font-size: 15px; max-width: 280px; }
+
+  .contemp { margin-top: clamp(48px, 6vw, 80px); display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 4vw, 56px); align-items: center; padding: clamp(26px, 4vw, 48px); border-radius: 24px; background: var(--navy); color: var(--ink); position: relative; overflow: hidden; }
+  .contemp::before { content: ""; position: absolute; right: -10%; top: -40%; width: 60%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(closest-side, rgba(201,162,75,.2), transparent); pointer-events: none; }
+  .contemp h3 { font-size: clamp(24px, 2.4vw, 32px); font-weight: 900; font-stretch: 112%; line-height: 1.02; letter-spacing: -.02em; text-transform: uppercase; }
+  .contemp p { margin-top: 14px; color: var(--muted); }
+  .contemp p b { color: var(--gold-2); font-weight: 600; }
+  .flow { position: relative; list-style: none; display: grid; gap: 10px; }
+  .flow li { position: relative; display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: center; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.04); border: 1px solid var(--line); }
+  .flow li svg { width: 22px; height: 22px; color: var(--gold); justify-self: center; }
+  .flow li b { display: block; font-weight: 700; }
+  .flow li span { display: block; font-size: 14px; color: var(--muted); }
+  .flow li.is-key { background: rgba(201,162,75,.12); border-color: rgba(201,162,75,.4); }
+  .flow > .flow__split { display: block; padding: 0; background: none; border: 0; }
+  .flow .split { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .flow .split li { grid-template-columns: 30px 1fr; padding: 12px 14px; }
+
+  /* ---------- consórcio x financiamento ---------- */
+  .compare { width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+  .compare th, .compare td { padding: 22px 24px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+  .compare tr:last-child th, .compare tr:last-child td { border-bottom: 0; }
+  .compare thead th { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; background: rgba(255,255,255,.02); }
+  .compare thead th.is-us { color: var(--navy-0); background: var(--gold); }
+  .compare tbody th { width: 24%; font-weight: 700; color: var(--ink); }
+  .compare td { color: var(--muted); width: 38%; }
+  .compare td.is-us { color: var(--ink); background: rgba(201,162,75,.07); border-left: 1px solid rgba(201,162,75,.35); border-right: 1px solid rgba(201,162,75,.35); }
+  .compare td.is-us b { color: var(--gold-2); }
+  .perks { margin-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+  .perk { padding: 28px 26px 0 0; margin-right: 26px; }
+  .perk + .perk { padding-left: 26px; border-left: 1px solid var(--line); }
+  .perk svg { width: 28px; height: 28px; color: var(--gold); margin-bottom: 16px; }
+  .perk h3 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+  .perk p { font-size: 14.5px; color: var(--muted); }
+
+  /* ---------- quem atende ---------- */
+  .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(32px, 6vw, 90px); align-items: center; }
+  .about__photo { position: relative; aspect-ratio: 1 / 1.08; border-radius: 26px; overflow: hidden; box-shadow: 0 40px 80px -40px rgba(10,31,68,.55); }
+  .about__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+  .about__photo figcaption { position: absolute; left: 16px; bottom: 16px; padding: 8px 12px; border-radius: 10px; background: rgba(5,15,36,.78); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color: #fff; font-size: 13px; }
+  .about blockquote { font-weight: 700; font-stretch: 104%; font-size: clamp(24px, 2.7vw, 36px); line-height: 1.18; letter-spacing: -.02em; text-wrap: pretty; }
+  .about blockquote::before { content: "“"; display: block; font-family: Georgia, serif; font-size: 90px; line-height: .6; color: var(--gold); margin-bottom: 8px; }
+  .about__sign { margin-top: 26px; color: var(--muted-dark); }
+  .about__sign b { color: var(--ink-dark); }
+  .checks { list-style: none; margin: 30px 0 34px; display: grid; gap: 12px; }
+  .checks li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; }
+  .checks svg { width: 22px; height: 22px; flex: none; color: var(--gold-deep); margin-top: 1px; }
+
+  /* ---------- simulação ---------- */
+  .sim { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+  .sim .sec-head { display: block; margin: 0; }
+  .sim .lead { margin-top: 20px; }
+  .sim__promise { list-style: none; margin-top: 30px; display: grid; gap: 14px; }
+  .sim__promise li { display: flex; gap: 12px; align-items: center; color: var(--muted); }
+  .sim__promise svg { width: 22px; height: 22px; color: var(--gold); flex: none; }
+  .sim__direct { margin-top: 32px; }
+  .form { padding: clamp(22px, 3vw, 36px); border-radius: 24px; background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03)); border: 1px solid var(--line); box-shadow: 0 40px 80px -40px rgba(0,0,0,.6); }
+  .field { display: grid; gap: 8px; margin-bottom: 20px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field > span, fieldset legend { font-size: 14px; font-weight: 600; color: var(--ink); }
+  .field input {
+    height: 52px; padding: 0 16px; border-radius: 10px; border: 1px solid var(--line); background: rgba(5,15,36,.55); color: var(--ink); font: inherit; font-size: 16px;
+    transition: border-color .25s, box-shadow .25s;
+  }
+  .field input::placeholder { color: rgba(243,245,250,.38); }
+  .field input:focus { outline: 0; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(201,162,75,.18); }
+  .field .err { display: none; font-size: 13px; color: #ffb4a8; }
+  .field.invalid input { border-color: #ff8a75; }
+  .field.invalid .err { display: block; }
+  fieldset { border: 0; margin-bottom: 22px; }
+  fieldset legend { margin-bottom: 10px; }
+  fieldset legend small { color: var(--muted); font-weight: 400; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips label { position: relative; }
+  .chips input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+  .chips span { display: inline-flex; align-items: center; height: 40px; padding: 0 15px; border-radius: 999px; border: 1px solid var(--line); font-size: 14px; color: var(--muted); transition: all .25s var(--ease); }
+  .chips label:hover span { border-color: rgba(201,162,75,.6); color: var(--ink); }
+  .chips input:checked + span { background: var(--gold); border-color: var(--gold); color: var(--navy-0); font-weight: 700; }
+  .chips input:focus-visible + span { outline: 2px solid var(--gold-2); outline-offset: 2px; }
+  .consent { display: flex; gap: 12px; align-items: flex-start; margin: 4px 0 22px; font-size: 14px; color: var(--muted); cursor: pointer; }
+  .consent input { width: 20px; height: 20px; margin-top: 1px; accent-color: var(--gold); flex: none; }
+  .consent.invalid { color: #ffb4a8; }
+  .form .btn { width: 100%; }
+  .form__fine { margin-top: 14px; font-size: 12.5px; color: var(--muted); text-align: center; }
+
+  /* ---------- FAQ ---------- */
+  .faq { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+  .faq .sec-head { display: block; margin: 0; position: sticky; top: 110px; }
+  .faq .lead { margin-top: 20px; }
+  .faq .sec-head .btn { margin-top: 28px; }
+  .qa { border-top: 1px solid var(--line-dark); }
+  .qa details { border-bottom: 1px solid var(--line-dark); }
+  .qa summary { list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 22px 0; font-size: 18px; font-weight: 700; letter-spacing: -.005em; cursor: pointer; }
+  .qa summary::-webkit-details-marker { display: none; }
+  .qa summary i { position: relative; width: 32px; height: 32px; flex: none; border-radius: 50%; border: 1px solid var(--line-dark); transition: background .3s, border-color .3s, transform .4s var(--ease); }
+  .qa summary i::before, .qa summary i::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 2px; margin: -1px 0 0 -6px; background: var(--ink-dark); border-radius: 2px; transition: transform .4s var(--ease); }
+  .qa summary i::after { transform: rotate(90deg); }
+  .qa details[open] summary i { background: var(--navy); border-color: var(--navy); transform: rotate(180deg); }
+  .qa details[open] summary i::before, .qa details[open] summary i::after { background: var(--gold-2); }
+  .qa details[open] summary i::after { transform: rotate(0); }
+  .qa summary:hover { color: var(--navy-3); }
+  .qa p { padding: 0 52px 24px 0; color: var(--muted-dark); }
+
+  /* ---------- CTA final + rodapé ---------- */
+  .final { position: relative; overflow: hidden; text-align: center; background: radial-gradient(80% 120% at 50% 0%, #16356f 0%, var(--navy) 45%, var(--navy-0) 100%); }
+  .final::before { content: ""; position: absolute; left: 50%; top: 0; width: min(900px, 90vw); height: 1px; transform: translateX(-50%); background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .final h2 { margin: 0 auto; max-width: 880px; }
+  .final .lead { margin: 22px auto 0; max-width: 520px; }
+  .final__actions { display: flex; justify-content: center; gap: 12px; margin-top: 36px; flex-wrap: wrap; }
+  .final__face { width: 76px; height: 76px; margin: 0 auto 28px; border-radius: 50%; overflow: hidden; border: 2px solid var(--gold); box-shadow: 0 0 0 6px rgba(201,162,75,.14); }
+  .final__face img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; }
+  .foot { background: #030a19; border-top: 1px solid var(--line); padding: 48px 0 110px; color: var(--muted); font-size: 13px; }
+  .foot__top { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-bottom: 26px; margin-bottom: 26px; border-bottom: 1px solid var(--line); font-size: 14.5px; }
+  .foot__top b { color: var(--ink); }
+  .foot__top a { color: var(--gold-2); }
+  .foot p + p { margin-top: 12px; }
+  .foot strong { color: var(--ink); font-weight: 600; }
+
+  /* botão flutuante */
+  .wa-float {
+    position: fixed; right: 18px; bottom: 18px; z-index: 60; display: flex; align-items: center; gap: 10px;
+    height: 58px; padding: 0 20px 0 16px; border-radius: 999px; background: var(--wa); color: #06260f; font-weight: 800; font-size: 15px;
+    box-shadow: 0 16px 40px -10px rgba(37,211,102,.55), 0 2px 6px rgba(0,0,0,.25);
+    transform: translateY(140%); opacity: 0; transition: transform .5s var(--ease), opacity .4s;
+  }
+  .wa-float svg { width: 26px; height: 26px; }
+  .wa-float.show { transform: none; opacity: 1; }
+  .wa-float:hover { transform: translateY(-3px); }
+
+  /* lightbox */
+  dialog.lb { margin: auto; padding: 0; border: 0; background: transparent; max-width: min(440px, 92vw); max-height: 92vh; overflow: visible; }
+  dialog.lb::backdrop { background: rgba(3,10,25,.86); backdrop-filter: blur(6px); }
+  dialog.lb img { width: 100%; height: auto; max-height: 86vh; object-fit: contain; border-radius: 16px; }
+  dialog.lb .lb__close { position: absolute; top: -14px; right: -14px; width: 44px; height: 44px; border-radius: 50%; background: #fff; color: var(--ink-dark); font-size: 24px; line-height: 1; box-shadow: 0 8px 20px rgba(0,0,0,.35); }
+  dialog.lb .btn { width: 100%; margin-top: 12px; }
+
+  /* ---------- revelações (só com movimento ligado) ---------- */
+  .anim .rv-mask { clip-path: inset(0 0 100% 0); transform: translateY(24px); transition: clip-path 1s var(--ease), transform 1s var(--ease); }
+  .anim .rv-mask.in { clip-path: inset(0 0 -10% 0); transform: none; }
+  .anim .rv-clip { clip-path: inset(12% 12% 12% 12% round 28px); transition: clip-path 1.2s var(--ease); }
+  .anim .rv-clip.in { clip-path: inset(0 0 0 0 round 0); }
+  .anim .rv-up { opacity: 0; transform: translateY(26px); transition: opacity .8s var(--ease), transform .8s var(--ease); transition-delay: var(--d, 0s); }
+  .anim .rv-up.in { opacity: 1; transform: none; }
+  .anim .tech li { --d: 0s; }
+  .anim .tech.rv-lines li::after { content: ""; position: absolute; left: 0; top: -1px; height: 1px; width: 100%; background: var(--line); transform: scaleX(0); transform-origin: left; transition: transform 1s var(--ease); transition-delay: var(--d); }
+  .anim .tech.rv-lines.in li::after { transform: scaleX(1); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+  /* ---------- tablet ---------- */
+  @media (max-width: 1080px) {
+    .menu { display: none; }
+    .offers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .offer--feature { grid-column: span 2; }
+    .offers .offer:last-child { grid-column: span 2; }
+    .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; }
+    .steps::before { display: none; }
+    .perks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .perk + .perk { padding-left: 0; border-left: 0; }
+    .perk { border-bottom: 1px solid var(--line); padding-bottom: 26px; }
+    .ticket { left: -24px; }
+  }
+
+  /* ---------- celular ---------- */
+  @media (max-width: 760px) {
+    :root { --sec-pad: 76px; --head-gap: 32px; }
+    .topbar .wrap { height: 62px; }
+    .brand strong { font-size: 15px; }
+    .brand small { font-size: 9.5px; }
+    .topbar .btn span { display: none; }
+    .topbar .btn { width: 44px; padding: 0; background: var(--wa); color: #06260f; box-shadow: none; }
+    .hero .wrap { grid-template-columns: 1fr; gap: 40px; padding-top: 30px; padding-bottom: 72px; }
+    .chip { font-size: 12.5px; margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(36px, 10.4vw, 46px); }
+    .hero__lead { margin-top: 18px; font-size: 16.5px; }
+    .hero__actions { margin-top: 26px; }
+    .hero__actions .btn { width: 100%; }
+    .hero__meta { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 32px; }
+    .hero__meta > div { padding: 18px 12px 0 0; margin-right: 12px; }
+    .hero__meta strong { font-size: 18px; white-space: nowrap; }
+    .hero__meta span { font-size: 12px; }
+    .portrait { justify-self: stretch; max-width: none; }
+    .portrait__frame { aspect-ratio: 4 / 4.3; border-radius: 22px; }
+    .ticket { left: 12px; top: auto; bottom: -26px; width: auto; right: 12px; grid-template-columns: 70px 1fr; }
+    .portrait__name { bottom: 58px; left: 20px; }
+    .seal { right: 10px; top: 14px; width: 88px; height: 88px; }
+    .seal b { font-size: 25px; }
+    .seal span { font-size: 9.5px; }
+    .strip li { font-size: 14px; gap: 20px; padding-right: 20px; }
+
+    .panel { margin-top: -28px; border-radius: 28px 28px 0 0; }
+    .sec h2 { font-size: clamp(30px, 8.6vw, 40px); }
+    .sec-head { gap: 16px; }
+
+    .offers { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 calc(var(--pad) * -1); padding: 4px var(--pad) 18px; scrollbar-width: none; }
+    .offers::-webkit-scrollbar { display: none; }
+    .offer, .offer--feature { flex: 0 0 84%; scroll-snap-align: center; display: flex; }
+    .offer--feature .offer__media { aspect-ratio: 900 / 440; min-height: 0; }
+    .offer--feature .offer__body { padding: 22px; }
+    .offer--feature h3 { font-size: 30px; }
+    .offer--feature .offer__price strong { font-size: 26px; }
+    .offer:hover { transform: none; }
+    .carousel-ui { display: flex; align-items: center; justify-content: space-between; margin-top: 6px; }
+    .carousel-ui .count { font-family: var(--mono); font-size: 13px; color: var(--muted-dark); }
+    .dots { display: flex; gap: 6px; }
+    .dots i { width: 7px; height: 7px; border-radius: 4px; background: var(--line-dark); transition: width .3s, background .3s; }
+    .dots i.on { width: 22px; background: var(--navy); }
+
+    .lines-grid, .sim, .faq, .about { grid-template-columns: 1fr; }
+    .lines-grid .sec-head, .faq .sec-head { position: static; }
+    .tech li { grid-template-columns: 44px minmax(0, 1fr); gap: 14px; padding: 22px 0; }
+    .tech__ico { width: 44px; height: 44px; border-radius: 12px; }
+    .tech a { grid-column: 2; justify-self: start; margin-top: 4px; }
+    .tech h3 { font-size: 19px; }
+
+    .steps { grid-template-columns: 1fr; row-gap: 0; }
+    .step { display: grid; grid-template-columns: 52px 1fr; gap: 0 18px; padding-bottom: 28px; }
+    .step:not(:last-child)::before { content: ""; position: absolute; left: 25px; top: 52px; bottom: 0; width: 2px; background: repeating-linear-gradient(180deg, rgba(169,131,47,.55) 0 6px, transparent 6px 12px); }
+    .step__n { width: 52px; height: 52px; font-size: 19px; margin: 0; grid-row: span 2; }
+    .step h3 { margin-top: 12px; }
+    .contemp { grid-template-columns: 1fr; border-radius: 20px; }
+    .flow .split { grid-template-columns: 1fr; }
+
+    .compare, .compare tbody, .compare tr, .compare th, .compare td { display: block; width: 100%; }
+    .compare thead { display: none; }
+    .compare { border: 0; border-radius: 0; }
+    .compare tr { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-bottom: 12px; }
+    .compare tbody th { width: auto; padding: 16px 18px 6px; border: 0; font-size: 17px; }
+    .compare td { width: auto; padding: 10px 18px 14px; border: 0; }
+    .compare td::before { content: attr(data-h); display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .compare td.is-us { border: 0; border-top: 1px solid rgba(201,162,75,.3); border-bottom: 1px solid var(--line); }
+    .compare td.is-us::before { color: var(--gold); }
+    .perks { grid-template-columns: 1fr; }
+    .perk { margin-right: 0; padding-right: 0; }
+
+    .about__photo { aspect-ratio: 4 / 3.4; }
+    .field-row { grid-template-columns: 1fr; gap: 0; }
+    .qa summary { font-size: 16.5px; }
+    .qa p { padding-right: 0; }
+    .final__actions .btn { width: 100%; }
+    .wa-float { right: 14px; bottom: 14px; height: 56px; width: 56px; padding: 0; justify-content: center; }
+    .wa-float span { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.47 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.27.49 1.7.63.71.23 1.36.2 1.88.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.35-.2-3.56.93.95-3.47-.22-.36a9.4 9.4 0 0 1-1.44-5.01c0-5.2 4.23-9.42 9.44-9.42 2.52 0 4.89.98 6.67 2.77a9.36 9.36 0 0 1 2.76 6.67c0 5.2-4.24 9.42-9.44 9.42m8.03-17.46A11.3 11.3 0 0 0 12.05.72C5.79.72.7 5.8.7 12.06c0 2 .52 3.95 1.52 5.67L.6 23.6l6-1.57a11.3 11.3 0 0 0 5.44 1.39h.01c6.26 0 11.35-5.1 11.35-11.35 0-3.03-1.18-5.88-3.32-8.03"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5" opacity=".35"/><path d="m7.5 12.3 3 3 6-6.3"/></g></symbol>
+    <symbol id="i-zoom" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6M10.5 7.8v5.4M7.8 10.5h5.4"/></g></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8"/></symbol>
+    <symbol id="i-pickup" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M2.5 15.5V12l2-.5 2.3-3.5h5.7v3.5h9v4h-1.6M7.6 15.5h7.8M2.5 15.5h1.4"/><circle cx="5.8" cy="15.8" r="1.9"/><circle cx="17.3" cy="15.8" r="1.9"/><path d="M8.2 8.5v3"/></g></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3.5 11 12 4l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5.5h4V20"/></g></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M2 5.5h11.5v10H2zM13.5 9h4.3l3.2 3.6v2.9h-7.5"/><circle cx="6" cy="17" r="1.9"/><circle cx="17.5" cy="17" r="1.9"/></g></symbol>
+    <symbol id="i-tractor" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><circle cx="7" cy="15.5" r="4"/><circle cx="7" cy="15.5" r="1.2"/><circle cx="18.5" cy="17" r="2.5"/><path d="M4 11.2V5h6.5l1.8 6.2H16l2.5 2.3v1M11 15.5h5"/><path d="M15 6v5"/></g></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 19.5c.6-3.3 3-5 6-5s5.4 1.7 6 5"/><path d="M15.5 4.9a3.2 3.2 0 0 1 0 6.2M17.5 14.6c1.8.6 3.1 2.2 3.5 4.9"/></g></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><path d="M2.5 10h19M6.5 14.5h4"/></g></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></g></symbol>
+    <symbol id="i-dice" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3.5"/><circle cx="9" cy="9" r="1.1" fill="currentColor"/><circle cx="15" cy="15" r="1.1" fill="currentColor"/><circle cx="15" cy="9" r="1.1" fill="currentColor"/><circle cx="9" cy="15" r="1.1" fill="currentColor"/></g></symbol>
+    <symbol id="i-hammer" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m13.5 6.5 4 4M9.5 10.5l4-4 1.5-1.5 4 4-1.5 1.5-4 4z"/><path d="m11.5 12.5-7 7"/><path d="M14 20.5h6.5"/></g></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="8" cy="15.5" r="4.5"/><path d="m11.3 12.3 8.2-8.3M16.5 7l2.5 2.5M14 9.5l2 2"/></g></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5h7M4 12h11M4 16.5h5"/><path d="m16 13.5 2.5 3 2.5-3M18.5 6.5v10"/></g></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></g></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4 5.5h16v10.5H9.5L5 20v-4H4z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.2 7.5 9.5 4.3-1.3 7.5-4.9 7.5-9.5V6z"/><path d="m8.8 12 2.3 2.3 4.2-4.4" stroke-linecap="round"/></g></symbol>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Henrique Oliveira, consultor de consórcios">
+      <span class="brand__mark"><img src="img/henrique.jpg" alt="" width="38" height="38"></span>
+      <span><strong>Henrique Oliveira</strong><small>Consultor de consórcios</small></span>
+    </a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#ofertas">Ofertas</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#comparar">Consórcio ou financiamento</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="btn btn--gold btn--sm" data-wa="Olá, Henrique! Vim pelo seu site e quero uma simulação de consórcio." href="#" aria-label="Falar com o Henrique no WhatsApp">
+      <svg><use href="#i-wa"/></svg><span>Falar no WhatsApp</span>
+    </a>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- herói -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="chip rv-up"><i></i>Consórcio Volkswagen com a Embracon</span>
+        <h1 class="rv-mask">Seu próximo Volkswagen, <em>sem juros</em> e no seu ritmo.</h1>
+        <p class="hero__lead rv-up" style="--d:.1s">Eu sou o Henrique. Monto com você um plano com a <strong>parcela que cabe no seu mês</strong> e explico taxa, prazo, sorteio e lance antes de você assinar qualquer coisa.</p>
+        <div class="hero__actions rv-up" style="--d:.18s">
+          <a class="btn btn--gold" data-wa="Olá, Henrique! Vim pelo seu site e quero uma simulação de consórcio." href="#">
+            <svg><use href="#i-wa"/></svg>Quero minha simulação
+          </a>
+          <a class="btn btn--line" href="#ofertas">Ver as ofertas do mês</a>
+        </div>
+        <div class="hero__meta rv-up" style="--d:.26s">
+          <div><strong>R$ 973,50<sup>*</sup></strong><span>parcelas a partir de</span></div>
+          <div><strong>50%</strong><span>de redutor até a contemplação</span></div>
+          <div><strong>100 meses</strong><span>de prazo, no máximo</span></div>
+        </div>
+      </div>
+
+      <figure class="portrait">
+        <div class="portrait__frame rv-clip">
+          <img src="img/henrique.jpg" alt="Henrique Miranda de Oliveira, consultor de consórcios" width="960" height="1280" fetchpriority="high">
+        </div>
+        <figcaption class="portrait__name"><strong>Henrique Miranda de Oliveira</strong><span>Quem vai te atender no WhatsApp</span></figcaption>
+        <div class="seal" aria-hidden="true"><div><b>0%</b><span>de juros no<br>consórcio</span></div></div>
+        <a class="ticket" href="#ofertas" aria-label="Ver a oferta do Polo">
+          <img src="img/polo.webp" alt="" width="74" height="52">
+          <div><b>Polo</b><small>Crédito de R$ 120 mil, parcelas a partir de <em>R$ 973,50*</em></small></div>
+        </a>
+      </figure>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <ul class="strip__track">
+      <li><b>Polo</b></li><li><b>Tera</b></li><li><b>Nivus</b></li><li><b>T-Cross</b></li><li><b>Taos</b></li><li>Caminhonetes</li><li>Imóveis e terrenos</li><li>Caminhões</li><li>Máquinas agrícolas</li>
+      <li><b>Polo</b></li><li><b>Tera</b></li><li><b>Nivus</b></li><li><b>T-Cross</b></li><li><b>Taos</b></li><li>Caminhonetes</li><li>Imóveis e terrenos</li><li>Caminhões</li><li>Máquinas agrícolas</li>
+    </ul>
+  </div>
+
+  <!-- ofertas -->
+  <section class="sec sec--paper panel" id="ofertas">
+    <div class="wrap">
+      <header class="sec-head">
+        <div>
+          <span class="label">Ofertas do Consórcio Volkswagen</span>
+          <h2 class="rv-mask">Escolha o carro. A parcela a gente planeja.</h2>
+        </div>
+        <p class="lead">Condições divulgadas pela linha Volkswagen com a Embracon. Toque em “Ver card” para ver a peça oficial e me chame para simular o seu plano.</p>
+      </header>
+
+      <div class="offers" id="offers">
+        <article class="offer offer--feature rv-up">
+          <div class="offer__media">
+            <img src="img/polo.webp" alt="Volkswagen Polo vermelho" width="900" height="440" loading="lazy">
+            <span class="offer__tag">Hatch</span>
+            <button class="offer__zoom" data-card="img/card-polo.webp" data-model="Polo"><svg><use href="#i-zoom"/></svg>Ver card</button>
+          </div>
+          <div class="offer__body">
+            <span class="offer__badge">Menor parcela da linha</span>
+            <h3>Polo</h3>
+            <p class="offer__credit">Crédito de <b>R$ 120 mil</b></p>
+            <div class="offer__price"><span>Parcelas a partir de</span><strong>R$ 973,50<sup>*</sup></strong></div>
+            <ul class="offer__specs">
+              <li><b>50% de redutor</b>na parcela até a contemplação</li>
+              <li><b>Até 100 meses</b>de prazo</li>
+            </ul>
+            <a class="btn btn--navy" data-wa="Olá, Henrique! Quero simular o consórcio do Polo (crédito de R$ 120 mil)." href="#"><svg><use href="#i-wa"/></svg>Simular o Polo</a>
+          </div>
+        </article>
+
+        <article class="offer rv-up" style="--d:.08s">
+          <div class="offer__media">
+            <img src="img/tera.webp" alt="Volkswagen Tera azul" width="900" height="440" loading="lazy">
+            <span class="offer__tag">SUV</span>
+            <button class="offer__zoom" data-card="img/card-tera.webp" data-model="Tera"><svg><use href="#i-zoom"/></svg>Ver card</button>
+          </div>
+          <div class="offer__body">
+            <h3>Tera</h3>
+            <p class="offer__credit">Crédito de <b>R$ 140 mil</b></p>
+            <div class="offer__price"><span>Parcelas a partir de</span><strong>R$ 1.135,75<sup>*</sup></strong></div>
+            <ul class="offer__specs">
+              <li><b>50% de redutor</b>até a contemplação</li>
+              <li><b>Até 100 meses</b>de prazo</li>
+            </ul>
+            <a class="btn btn--navy" data-wa="Olá, Henrique! Quero simular o consórcio do Tera (crédito de R$ 140 mil)." href="#"><svg><use href="#i-wa"/></svg>Simular o Tera</a>
+          </div>
+        </article>
+
+        <article class="offer rv-up">
+          <div class="offer__media">
+            <img src="img/nivus.webp" alt="Volkswagen Nivus azul" width="900" height="440" loading="lazy">
+            <span class="offer__tag">SUV</span>
+            <button class="offer__zoom" data-card="img/card-nivus.webp" data-model="Nivus"><svg><use href="#i-zoom"/></svg>Ver card</button>
+          </div>
+          <div class="offer__body">
+            <h3>Nivus</h3>
+            <p class="offer__credit">Crédito de <b>R$ 160 mil</b></p>
+            <div class="offer__price"><span>Parcelas a partir de</span><strong>R$ 1.298,00<sup>*</sup></strong></div>
+            <ul class="offer__specs">
+              <li><b>50% de redutor</b>até a contemplação</li>
+              <li><b>Até 100 meses</b>de prazo</li>
+            </ul>
+            <a class="btn btn--navy" data-wa="Olá, Henrique! Quero simular o consórcio do Nivus (crédito de R$ 160 mil)." href="#"><svg><use href="#i-wa"/></svg>Simular o Nivus</a>
+          </div>
+        </article>
+
+        <article class="offer rv-up" style="--d:.08s">
+          <div class="offer__media">
+            <img src="img/tcross.webp" alt="Volkswagen T-Cross branco" width="900" height="440" loading="lazy">
+            <span class="offer__tag">SUV</span>
+            <button class="offer__zoom" data-card="img/card-tcross.webp" data-model="T-Cross"><svg><use href="#i-zoom"/></svg>Ver card</button>
+          </div>
+          <div class="offer__body">
+            <h3>T-Cross</h3>
+            <p class="offer__credit">Crédito de <b>R$ 180 mil</b></p>
+            <div class="offer__price"><span>Parcelas a partir de</span><strong>R$ 1.460,25<sup>*</sup></strong></div>
+            <ul class="offer__specs">
+              <li><b>50% de redutor</b>até a contemplação</li>
+              <li><b>Até 100 meses</b>de prazo</li>
+            </ul>
+            <a class="btn btn--navy" data-wa="Olá, Henrique! Quero simular o consórcio do T-Cross (crédito de R$ 180 mil)." href="#"><svg><use href="#i-wa"/></svg>Simular o T-Cross</a>
+          </div>
+        </article>
+
+        <article class="offer rv-up" style="--d:.16s">
+          <div class="offer__media">
+            <img src="img/taos.webp" alt="Volkswagen Taos prata" width="900" height="440" loading="lazy">
+            <span class="offer__tag">SUV</span>
+            <button class="offer__zoom" data-card="img/card-taos.webp" data-model="Taos"><svg><use href="#i-zoom"/></svg>Ver card</button>
+          </div>
+          <div class="offer__body">
+            <h3>Taos</h3>
+            <p class="offer__credit">Crédito de <b>R$ 220 mil</b></p>
+            <div class="offer__price"><span>Parcelas a partir de</span><strong>R$ 1.784,75<sup>*</sup></strong></div>
+            <ul class="offer__specs">
+              <li><b>50% de redutor</b>até a contemplação</li>
+              <li><b>Até 100 meses</b>de prazo</li>
+            </ul>
+            <a class="btn btn--navy" data-wa="Olá, Henrique! Quero simular o consórcio do Taos (crédito de R$ 220 mil)." href="#"><svg><use href="#i-wa"/></svg>Simular o Taos</a>
+          </div>
+        </article>
+      </div>
+      <div class="carousel-ui" aria-hidden="true"><span class="count" id="count">1 / 5</span><span class="dots" id="dots"></span></div>
+
+      <p class="note">*Valores “a partir de”, conforme os materiais promocionais divulgados. As condições finais (taxas, grupo, prazo e parcela) variam conforme o plano contratado e estão sujeitas a alteração e análise. Consórcio não é financiamento.</p>
+    </div>
+  </section>
+
+  <!-- outras linhas -->
+  <section class="sec sec--navy panel" id="outras-linhas">
+    <div class="wrap lines-grid">
+      <header class="sec-head">
+        <span class="label">Outras linhas de consórcio</span>
+        <h2 class="rv-mask">Não é carro? Também tem plano.</h2>
+        <p class="lead">Apresento crédito planejado para outros bens de valor. Conte o que você quer e eu mostro as condições disponíveis.</p>
+        <span class="partner">Linhas com a <b>Porto Seguro</b> e o <b>Porto Bank</b></span>
+      </header>
+      <ul class="tech rv-lines">
+        <li class="rv-up" style="--d:0s">
+          <span class="tech__ico"><svg><use href="#i-pickup"/></svg></span>
+          <div><h3>Caminhonetes e SUVs</h3><p>Mais espaço e versatilidade para família, trabalho e estrada.</p></div>
+          <a data-wa="Olá, Henrique! Quero conhecer o consórcio de caminhonetes e SUVs." href="#">Consultar<svg><use href="#i-arrow"/></svg></a>
+        </li>
+        <li class="rv-up" style="--d:.08s">
+          <span class="tech__ico"><svg><use href="#i-home"/></svg></span>
+          <div><h3>Imóveis e terrenos</h3><p>Planejamento de longo prazo para a casa, o apartamento ou o terreno.</p></div>
+          <a data-wa="Olá, Henrique! Quero conhecer o consórcio de imóveis e terrenos." href="#">Consultar<svg><use href="#i-arrow"/></svg></a>
+        </li>
+        <li class="rv-up" style="--d:.16s">
+          <span class="tech__ico"><svg><use href="#i-truck"/></svg></span>
+          <div><h3>Caminhões</h3><p>Cartas de crédito para quem trabalha com transporte e logística.</p></div>
+          <a data-wa="Olá, Henrique! Quero conhecer o consórcio de caminhões." href="#">Consultar<svg><use href="#i-arrow"/></svg></a>
+        </li>
+        <li class="rv-up" style="--d:.24s">
+          <span class="tech__ico"><svg><use href="#i-tractor"/></svg></span>
+          <div><h3>Máquinas agrícolas</h3><p>Planejamento para ampliar a capacidade de produção no campo.</p></div>
+          <a data-wa="Olá, Henrique! Quero conhecer o consórcio de máquinas e equipamentos agrícolas." href="#">Consultar<svg><use href="#i-arrow"/></svg></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- como funciona -->
+  <section class="sec sec--paper panel" id="como-funciona">
+    <div class="wrap">
+      <header class="sec-head">
+        <div>
+          <span class="label">Como funciona</span>
+          <h2 class="rv-mask">Do primeiro papo à carta de crédito.</h2>
+        </div>
+        <p class="lead">Um caminho claro, com você decidindo em cada etapa. Sem pressa e sem letra miúda.</p>
+      </header>
+      <ol class="steps">
+        <li class="step rv-up"><span class="step__n">1</span><h3>Entender o objetivo</h3><p>Conversamos sobre o bem, o valor de crédito e a parcela que cabe no seu orçamento.</p></li>
+        <li class="step rv-up" style="--d:.08s"><span class="step__n">2</span><h3>Conhecer as opções</h3><p>Apresento os planos disponíveis, com prazos, taxas e regras explicados com clareza.</p></li>
+        <li class="step rv-up" style="--d:.16s"><span class="step__n">3</span><h3>Escolher a proposta</h3><p>Você compara com calma e escolhe a que combina com o seu planejamento.</p></li>
+        <li class="step rv-up" style="--d:.24s"><span class="step__n">4</span><h3>Acompanhar até o fim</h3><p>Sigo com você nas parcelas, nas assembleias e no uso da carta de crédito.</p></li>
+      </ol>
+
+      <div class="contemp rv-up">
+        <div>
+          <span class="label" style="color:var(--gold)">Antes de contratar</span>
+          <h3 style="margin-top:14px">Consórcio não é crédito imediato.</h3>
+          <p>Ao contratar, você entra em um grupo e passa a concorrer à contemplação todos os meses, por <b>sorteio ou lance</b>, conforme as regras do grupo e <b>sem garantia de data</b>. A carta de crédito só pode ser usada depois da contemplação e das exigências do contrato.</p>
+        </div>
+        <ol class="flow" aria-label="Como funciona a contemplação">
+          <li><svg><use href="#i-users"/></svg><div><b>Você entra no grupo</b><span>Paga as parcelas mensais, com redutor se o plano tiver.</span></div></li>
+          <li class="flow__split">
+            <ul class="split">
+              <li><svg><use href="#i-dice"/></svg><div><b>Sorteio</b><span>todo mês, na assembleia</span></div></li>
+              <li><svg><use href="#i-hammer"/></svg><div><b>Lance</b><span>opcional, sem garantia</span></div></li>
+            </ul>
+          </li>
+          <li class="is-key"><svg><use href="#i-key"/></svg><div><b>Contemplado: carta de crédito liberada</b><span>Depois disso, a parcela segue as regras do contrato.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- consórcio x financiamento -->
+  <section class="sec sec--navy panel" id="comparar">
+    <div class="wrap">
+      <header class="sec-head">
+        <div>
+          <span class="label">Por que consórcio</span>
+          <h2 class="rv-mask">Consórcio ou financiamento?</h2>
+        </div>
+        <p class="lead">A diferença, sem rodeio. O consórcio é para quem planeja a compra; quem precisa do bem amanhã deve olhar o financiamento.</p>
+      </header>
+      <table class="compare rv-up">
+        <thead><tr><th scope="col"><span class="sr">Item</span></th><th scope="col" class="is-us">Consórcio</th><th scope="col">Financiamento</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Juros</th><td class="is-us" data-h="Consórcio"><b>Não tem juros.</b> O custo é a taxa de administração e o fundo de reserva, definidos em contrato e diluídos nas parcelas.</td><td data-h="Financiamento">Tem cobrança de juros sobre o valor financiado.</td></tr>
+          <tr><th scope="row">Quando você usa o crédito</th><td class="is-us" data-h="Consórcio">Depois da contemplação, por <b>sorteio ou lance</b>, sem data garantida.</td><td data-h="Financiamento">O crédito é liberado de imediato.</td></tr>
+          <tr><th scope="row">Para quem é</th><td class="is-us" data-h="Consórcio">Para quem <b>planeja a conquista</b> e quer organizar o pagamento no próprio ritmo.</td><td data-h="Financiamento">Para quem precisa do bem agora.</td></tr>
+        </tbody>
+      </table>
+      <div class="perks">
+        <div class="perk rv-up"><svg><use href="#i-target"/></svg><h3>Planejamento</h3><p>Você define o objetivo, o crédito e o prazo.</p></div>
+        <div class="perk rv-up" style="--d:.08s"><svg><use href="#i-down"/></svg><h3>Redutor de parcela</h3><p>Em alguns planos, parcela menor até a contemplação.</p></div>
+        <div class="perk rv-up" style="--d:.16s"><svg><use href="#i-hammer"/></svg><h3>Possibilidade de lance</h3><p>Além do sorteio, você pode ofertar lance, sem garantia de resultado.</p></div>
+        <div class="perk rv-up" style="--d:.24s"><svg><use href="#i-chat"/></svg><h3>Atendimento humano</h3><p>Tire dúvidas e compare planos direto comigo no WhatsApp.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- quem atende -->
+  <section class="sec sec--paper panel" id="quem-atende">
+    <div class="wrap about">
+      <figure class="about__photo rv-clip">
+        <img src="img/henrique.jpg" alt="Henrique Miranda de Oliveira sorrindo" width="960" height="1280" loading="lazy">
+        <figcaption>Henrique Miranda de Oliveira</figcaption>
+      </figure>
+      <div>
+        <span class="label" style="color:var(--gold-deep)">Quem vai te atender</span>
+        <blockquote class="rv-up" style="margin-top:18px">Meu trabalho é traduzir as regras do consórcio para a sua realidade, para que você decida com segurança, sem pressa e sem surpresas.</blockquote>
+        <p class="about__sign"><b>Henrique Miranda de Oliveira</b>, consultor comercial e especialista em consórcios de veículos, imóveis e bens de alto valor.</p>
+        <ul class="checks">
+          <li><svg><use href="#i-check"/></svg>Explicação clara de taxas, prazos e regras</li>
+          <li><svg><use href="#i-check"/></svg>Propostas alinhadas ao seu planejamento</li>
+          <li><svg><use href="#i-check"/></svg>Acompanhamento direto pelo WhatsApp</li>
+        </ul>
+        <a class="btn btn--navy" data-wa="Olá, Henrique! Vim pelo seu site e quero conversar sobre consórcio." href="#"><svg><use href="#i-wa"/></svg>Conversar com o Henrique</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- simulação -->
+  <section class="sec sec--navy panel" id="simulacao">
+    <div class="wrap sim">
+      <header class="sec-head">
+        <span class="label">Simulação sem compromisso</span>
+        <h2 class="rv-mask">Receba sua simulação no WhatsApp.</h2>
+        <p class="lead">Leva menos de um minuto. Eu respondo pessoalmente com as opções e explico cada detalhe.</p>
+        <ul class="sim__promise">
+          <li><svg><use href="#i-check"/></svg>Sem custo e sem compromisso</li>
+          <li><svg><use href="#i-shield"/></svg>Nenhuma contratação é feita por aqui</li>
+          <li><svg><use href="#i-chat"/></svg>Seus dados servem só para iniciar o atendimento</li>
+        </ul>
+        <div class="sim__direct">
+          <a class="btn btn--line" data-wa="Olá, Henrique! Vim pelo seu site e quero uma simulação de consórcio." href="#"><svg><use href="#i-wa"/></svg>Prefiro chamar direto: (11) 95398-8267</a>
+        </div>
+      </header>
+
+      <form class="form rv-up" id="simForm" novalidate>
+        <div class="field-row">
+          <label class="field" id="f-nome">
+            <span>Seu nome</span>
+            <input name="nome" autocomplete="given-name" placeholder="Como posso te chamar?">
+            <em class="err">Informe seu nome.</em>
+          </label>
+          <label class="field" id="f-tel">
+            <span>WhatsApp com DDD</span>
+            <input name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000">
+            <em class="err">Informe um WhatsApp válido com DDD.</em>
+          </label>
+        </div>
+        <fieldset>
+          <legend>O que você quer conquistar?</legend>
+          <div class="chips">
+            <label><input type="radio" name="bem" value="Carro" checked><span>Carro</span></label>
+            <label><input type="radio" name="bem" value="Caminhonete ou SUV"><span>Caminhonete ou SUV</span></label>
+            <label><input type="radio" name="bem" value="Imóvel ou terreno"><span>Imóvel ou terreno</span></label>
+            <label><input type="radio" name="bem" value="Caminhão"><span>Caminhão</span></label>
+            <label><input type="radio" name="bem" value="Máquinas agrícolas"><span>Máquinas agrícolas</span></label>
+            <label><input type="radio" name="bem" value="Ainda não sei, quero orientação"><span>Ainda não sei</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Crédito pretendido <small>(opcional)</small></legend>
+          <div class="chips">
+            <label><input type="radio" name="credito" value="até R$ 100 mil"><span>Até R$ 100 mil</span></label>
+            <label><input type="radio" name="credito" value="de R$ 100 mil a R$ 200 mil"><span>R$ 100 a 200 mil</span></label>
+            <label><input type="radio" name="credito" value="de R$ 200 mil a R$ 300 mil"><span>R$ 200 a 300 mil</span></label>
+            <label><input type="radio" name="credito" value="acima de R$ 300 mil"><span>Acima de R$ 300 mil</span></label>
+          </div>
+        </fieldset>
+        <label class="field">
+          <span>Modelo ou bem de interesse <small style="color:var(--muted);font-weight:400">(opcional)</small></span>
+          <input name="modelo" placeholder="Ex.: T-Cross, apartamento, caminhão…">
+        </label>
+        <label class="consent" id="f-ok">
+          <input type="checkbox" name="ok">
+          <span>Concordo em ser contatado pelo WhatsApp para receber informações sobre consórcio.</span>
+        </label>
+        <button class="btn btn--gold" type="submit"><svg><use href="#i-wa"/></svg>Continuar no WhatsApp</button>
+        <p class="form__fine">O WhatsApp abre com a sua mensagem pronta. É só enviar.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- dúvidas -->
+  <section class="sec sec--paper panel" id="duvidas">
+    <div class="wrap faq">
+      <header class="sec-head">
+        <span class="label">Dúvidas</span>
+        <h2 class="rv-mask">Perguntas frequentes.</h2>
+        <p class="lead">As respostas que eu mais dou no WhatsApp. Ficou alguma dúvida? Me chama.</p>
+        <a class="btn btn--navy" data-wa="Olá, Henrique! Tenho uma dúvida sobre consórcio." href="#"><svg><use href="#i-wa"/></svg>Perguntar ao Henrique</a>
+      </header>
+      <div class="qa">
+        <details open><summary>O consórcio tem juros?<i></i></summary><p>Não. O consórcio não cobra juros. O custo é composto pela taxa de administração e pelo fundo de reserva, que são definidos no contrato e diluídos nas parcelas, além de eventuais seguros e encargos previstos.</p></details>
+        <details><summary>Em quanto tempo serei contemplado?<i></i></summary><p>Não é possível garantir. A contemplação ocorre por sorteio ou lance, conforme as regras do grupo, e não possui data garantida. Por isso o consórcio é indicado para quem planeja a aquisição, e não para quem precisa do bem de imediato.</p></details>
+        <details><summary>Como funciona o redutor de 50% na parcela?<i></i></summary><p>Nos planos com redutor, a parcela é menor até a contemplação. Depois de contemplado, o valor segue as regras do contrato. Os detalhes do plano são apresentados na proposta antes da contratação.</p></details>
+        <details><summary>O que é o lance?<i></i></summary><p>É uma oferta de valor feita nas assembleias para concorrer à contemplação. Ofertar lance é opcional e não garante a contemplação. As regras variam conforme o grupo e o plano.</p></details>
+        <details><summary>Consórcio é a mesma coisa que financiamento?<i></i></summary><p>Não. No financiamento o crédito é liberado de imediato e há cobrança de juros. No consórcio você participa de um grupo e só utiliza a carta de crédito após ser contemplado.</p></details>
+        <details><summary>A simulação tem algum custo?<i></i></summary><p>Não. A simulação é feita sem compromisso. Você recebe as informações pelo WhatsApp e decide se quer seguir adiante.</p></details>
+        <details><summary>Posso fazer consórcio de outros bens além de veículos?<i></i></summary><p>Sim. Também apresento opções para imóveis, terrenos, caminhões, máquinas e equipamentos agrícolas. Fale comigo para conhecer o que está disponível.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="sec final panel">
+    <div class="wrap">
+      <div class="final__face"><img src="img/henrique.jpg" alt="" width="76" height="76" loading="lazy"></div>
+      <h2 class="rv-mask">Vamos planejar a sua próxima conquista?</h2>
+      <p class="lead">Me conte o que você quer conquistar. Eu retorno pelo WhatsApp com as opções, sem compromisso.</p>
+      <div class="final__actions">
+        <a class="btn btn--gold" data-wa="Olá, Henrique! Vim pelo seu site e quero uma simulação de consórcio." href="#"><svg><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
+        <a class="btn btn--line" href="#simulacao">Preencher a simulação</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <span><b>Henrique Miranda de Oliveira</b>, consultor de consórcios</span>
+      <span>WhatsApp: <a data-wa="Olá, Henrique! Vim pelo seu site." href="#">(11) 95398-8267</a></span>
+    </div>
+    <p><strong>Aviso importante:</strong> esta é uma página comercial independente de atendimento em consórcios e não é o site oficial da Volkswagen, da Embracon, da Porto Seguro ou do Porto Bank. Volkswagen e demais marcas citadas pertencem aos seus respectivos titulares e são utilizadas apenas para identificar as ofertas divulgadas.</p>
+    <p>Consórcio não é financiamento nem crédito imediato. A contemplação ocorre por sorteio ou lance, conforme as regras do grupo, e não possui garantia de data. Os valores marcados com asterisco (*) são “a partir de” e podem variar conforme plano, prazo, grupo e análise, estando sujeitos a alteração sem aviso. Há taxa de administração, fundo de reserva e demais encargos previstos em contrato. Leia o regulamento e o contrato antes de contratar. Imagens meramente ilustrativas.</p>
+    <p>© <span id="ano">2026</span> Henrique Miranda de Oliveira. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<a class="wa-float" id="waFloat" data-wa="Olá, Henrique! Vim pelo seu site e quero uma simulação de consórcio." href="#" aria-label="Falar com o Henrique no WhatsApp"><svg><use href="#i-wa"/></svg><span>Fale com o Henrique</span></a>
+
+<dialog class="lb" id="lb">
+  <button class="lb__close" id="lbClose" aria-label="Fechar">×</button>
+  <img id="lbImg" src="" alt="" width="900" height="1600">
+  <a class="btn btn--gold" id="lbCta" href="#"><svg><use href="#i-wa"/></svg>Quero simular este plano</a>
+</dialog>
+
+<script>
+(function () {
+  var FONE = '5511953988267';
+  function wa(msg) { return 'https://wa.me/' + FONE + '?text=' + encodeURIComponent(msg); }
+
+  // todos os botões de WhatsApp com mensagem pronta
+  document.querySelectorAll('[data-wa]').forEach(function (a) {
+    a.href = wa(a.getAttribute('data-wa'));
+    a.target = '_blank'; a.rel = 'noopener';
+    a.addEventListener('click', function () {
+      if (window.gtag) gtag('event', 'whatsapp_click', { label: a.getAttribute('data-wa') });
+      if (window.fbq) fbq('track', 'Contact');
+    });
+  });
+  document.getElementById('ano').textContent = new Date().getFullYear();
+
+  // revelações (só com movimento ligado)
+  var calmo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!calmo && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('anim');
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: .12 });
+    document.querySelectorAll('.rv-mask, .rv-clip, .rv-up, .rv-lines').forEach(function (el) { io.observe(el); });
+  }
+
+  // botão flutuante: aparece depois do herói, some na simulação
+  var flt = document.getElementById('waFloat'), hero = document.querySelector('.hero'), sim = document.getElementById('simulacao');
+  function onScroll() {
+    var passou = hero.getBoundingClientRect().bottom < 0;
+    var r = sim.getBoundingClientRect(), naSim = r.top < innerHeight * .6 && r.bottom > innerHeight * .4;
+    flt.classList.toggle('show', passou && !naSim);
+  }
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // carrossel de ofertas no celular: contador e pontos
+  var track = document.getElementById('offers'), cards = track.children, dots = document.getElementById('dots'), count = document.getElementById('count');
+  for (var i = 0; i < cards.length; i++) dots.appendChild(document.createElement('i'));
+  function marca() {
+    var c = track.scrollLeft + track.clientWidth / 2, idx = 0, best = 1e9;
+    for (var i = 0; i < cards.length; i++) {
+      var m = cards[i].offsetLeft + cards[i].offsetWidth / 2, d = Math.abs(m - c);
+      if (d < best) { best = d; idx = i; }
+    }
+    count.textContent = (idx + 1) + ' / ' + cards.length;
+    [].forEach.call(dots.children, function (d, i) { d.classList.toggle('on', i === idx); });
+  }
+  track.addEventListener('scroll', marca, { passive: true }); marca();
+
+  // card oficial ampliado
+  var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCta = document.getElementById('lbCta');
+  document.querySelectorAll('.offer__zoom').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var m = b.getAttribute('data-model');
+      lbImg.src = b.getAttribute('data-card');
+      lbImg.alt = 'Card promocional do Consórcio Volkswagen: ' + m;
+      lbCta.href = wa('Olá, Henrique! Vi o card do ' + m + ' no seu site e quero simular este plano.');
+      lbCta.target = '_blank'; lbCta.rel = 'noopener';
+      if (lb.showModal) lb.showModal(); else window.open(lbImg.src, '_blank');
+    });
+  });
+  document.getElementById('lbClose').addEventListener('click', function () { lb.close(); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
+
+  // simulação → WhatsApp
+  var tel = document.querySelector('[name=tel]');
+  tel.addEventListener('input', function () {
+    var d = tel.value.replace(/\D/g, '').slice(0, 11);
+    if (d.length > 6) tel.value = '(' + d.slice(0, 2) + ') ' + d.slice(2, d.length - 4) + '-' + d.slice(-4);
+    else if (d.length > 2) tel.value = '(' + d.slice(0, 2) + ') ' + d.slice(2);
+    else tel.value = d;
+  });
+  document.getElementById('simForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target, ok = true;
+    var nome = f.nome.value.trim(), dig = f.tel.value.replace(/\D/g, '');
+    document.getElementById('f-nome').classList.toggle('invalid', !nome); if (!nome) ok = false;
+    var telOk = dig.length >= 10 && dig.length <= 11;
+    document.getElementById('f-tel').classList.toggle('invalid', !telOk); if (!telOk) ok = false;
+    document.getElementById('f-ok').classList.toggle('invalid', !f.ok.checked); if (!f.ok.checked) ok = false;
+    if (!ok) { var el = f.querySelector('.invalid input'); if (el) el.focus(); return; }
+    var bem = f.querySelector('[name=bem]:checked').value;
+    var cred = f.querySelector('[name=credito]:checked');
+    var msg = 'Olá, Henrique! Sou ' + nome + ' e quero uma simulação de consórcio.\n' +
+      '• Quero conquistar: ' + bem +
+      (cred ? '\n• Crédito pretendido: ' + cred.value : '') +
+      (f.modelo.value.trim() ? '\n• Interesse: ' + f.modelo.value.trim() : '') +
+      '\n• Meu WhatsApp: ' + f.tel.value;
+    if (window.gtag) gtag('event', 'generate_lead');
+    if (window.fbq) fbq('track', 'Lead');
+    window.open(wa(msg), '_blank', 'noopener');
+  });
+})();
+</script>
+</body>
+</html>
