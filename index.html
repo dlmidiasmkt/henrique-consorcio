@@ -13,7 +13,7 @@
 <meta property="og:image" content="img/henrique.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root {
     /* paleta do Henrique (marinho + dourado), refinada */
@@ -34,8 +34,10 @@
     --line: rgba(243, 245, 250, .12);
     --line-dark: #dfe5ef;
     --wa: #25d366;
-    --sans: "Archivo", system-ui, sans-serif;
-    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --sans: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --display: "Bricolage Grotesque", "Geist", system-ui, sans-serif;
+    --serif: "Instrument Serif", Georgia, serif;
+    --mono: "Geist Mono", ui-monospace, monospace;
     --pad: clamp(16px, 4vw, 56px);
     --max: 1240px;
     --sec-pad: clamp(84px, 10vw, 140px);
@@ -52,6 +54,11 @@
   [id] { scroll-margin-top: 80px; }
   .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
   .label { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+  h1, h2, h3, .brand strong, .hero__meta strong, .seal b, .ticket b, .strip li, .step__n, .offer__price strong, .portrait__name strong, .about blockquote {
+    font-family: var(--display); font-stretch: 100%; font-variation-settings: "opsz" 96;
+  }
+  h1 em, h2 em, h3 em { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -.01em; color: var(--gold); padding-right: .04em; }
+  .sec--paper h2 em { color: var(--gold-deep); }
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
   /* grão de filme na página inteira */
@@ -91,8 +98,7 @@
   }
   .topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 20px; }
   .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
-  .brand__mark { width: 38px; height: 38px; border-radius: 50%; overflow: hidden; flex: none; border: 1px solid rgba(201,162,75,.6); box-shadow: 0 0 0 3px rgba(201,162,75,.12); }
-  .brand__mark img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; }
+  .brand__mark { width: 4px; height: 34px; border-radius: 4px; flex: none; background: linear-gradient(180deg, var(--gold-2), var(--gold-deep)); box-shadow: 0 0 14px rgba(201,162,75,.45); }
   .brand strong { display: block; font-weight: 800; font-stretch: 112%; font-size: 16px; letter-spacing: -.01em; line-height: 1.1; white-space: nowrap; }
   .brand small { display: block; font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold-2); opacity: .85; margin-top: 3px; }
   .menu { display: flex; gap: 30px; font-size: 14.5px; color: var(--muted); }
@@ -117,18 +123,17 @@
   }
   .chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(201,162,75,.22); flex: none; }
   .hero h1 {
-    font-weight: 900; font-stretch: 114%; text-transform: uppercase; text-wrap: balance;
-    font-size: clamp(38px, 4.3vw, 64px); line-height: .95; letter-spacing: -.035em;
+    font-weight: 800; text-wrap: balance;
+    font-size: clamp(36px, 5vw, 76px); line-height: 1; letter-spacing: -.045em;
   }
-  .hero h1 em { font-style: normal; color: var(--gold); position: relative; white-space: nowrap; }
-  .hero h1 em::after { content: ""; position: absolute; left: 0; right: 0; bottom: .02em; height: .09em; background: currentColor; opacity: .35; border-radius: 2px; }
+  .hero h1 em { font-size: 1.12em; line-height: .9; white-space: nowrap; }
   .hero__lead { margin-top: 26px; max-width: 530px; font-size: clamp(17px, 1.35vw, 19px); color: var(--muted); }
   .hero__lead strong { color: var(--ink); font-weight: 600; }
   .hero__actions { display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap; }
   .hero__meta { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 0; margin-top: 44px; max-width: 620px; border-top: 1px solid var(--line); }
   .hero__meta > div { padding: 22px 30px 0 0; margin-right: 30px; border-right: 1px solid var(--line); }
   .hero__meta > div:last-child { border-right: 0; margin-right: 0; }
-  .hero__meta strong { display: block; font-size: clamp(22px, 2.1vw, 28px); font-weight: 800; font-stretch: 112%; letter-spacing: -.02em; line-height: 1.05; }
+  .hero__meta strong { display: block; font-size: clamp(22px, 2.1vw, 30px); font-weight: 700; letter-spacing: -.03em; line-height: 1.05; }
   .hero__meta strong sup { font-size: .5em; color: var(--gold-2); vertical-align: .9em; margin-left: 1px; }
   .hero__meta span { display: block; margin-top: 6px; color: var(--muted); font-size: 13.5px; line-height: 1.35; }
 
@@ -150,8 +155,7 @@
     background: rgba(245,247,251,.97); color: var(--ink-dark); border-radius: 14px;
     box-shadow: 0 24px 50px -18px rgba(0,0,0,.65); transition: transform .4s var(--ease);
   }
-  .ticket:hover { transform: translateY(-4px) rotate(-1deg); }
-  .ticket img { width: 74px; height: 52px; object-fit: cover; border-radius: 8px; }
+    .ticket img { width: 74px; height: 52px; object-fit: cover; border-radius: 8px; }
   .ticket b { display: block; font-weight: 800; font-stretch: 110%; font-size: 15px; line-height: 1.1; }
   .ticket small { display: block; font-size: 12.5px; color: var(--muted-dark); line-height: 1.3; margin-top: 3px; }
   .ticket small em { white-space: nowrap; font-style: normal; font-weight: 700; color: var(--ink-dark); }
@@ -160,13 +164,13 @@
     display: grid; place-items: center; text-align: center; background: var(--gold); color: var(--navy-0);
     box-shadow: 0 18px 40px -12px rgba(201,162,75,.6); transform: rotate(8deg);
   }
-  .seal b { display: block; font-weight: 900; font-stretch: 120%; font-size: 30px; line-height: .9; letter-spacing: -.03em; }
+  .seal b { display: block; font-weight: 800; font-size: 32px; line-height: .9; letter-spacing: -.03em; }
   .seal span { display: block; font-size: 10.5px; font-weight: 700; line-height: 1.15; text-transform: uppercase; letter-spacing: .02em; margin-top: 3px; }
 
   /* faixa de linhas */
-  .strip { background: var(--navy-0); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; padding: 22px 0; }
+  .strip { background: var(--navy-0); border-top: 1px solid var(--line); overflow: hidden; padding: 24px 0 62px; }
   .strip__track { display: flex; width: max-content; list-style: none; animation: slide 50s linear infinite; }
-  .strip li { display: flex; align-items: center; gap: 28px; padding-right: 28px; white-space: nowrap; font-weight: 800; font-stretch: 115%; text-transform: uppercase; font-size: 17px; letter-spacing: .01em; color: rgba(243,245,250,.48); }
+  .strip li { display: flex; align-items: center; gap: 28px; padding-right: 28px; white-space: nowrap; font-weight: 700; font-size: 20px; letter-spacing: -.02em; color: rgba(243,245,250,.48); }
   .strip li::after { content: ""; width: 7px; height: 7px; transform: rotate(45deg); background: var(--gold); opacity: .7; }
   .strip li b { color: var(--ink); font-weight: 800; }
   @keyframes slide { to { transform: translateX(-50%); } }
@@ -177,47 +181,68 @@
   .sec--paper { background: linear-gradient(180deg, #fff 0, var(--paper) 260px); color: var(--ink-dark); }
   .sec--navy { background: linear-gradient(180deg, var(--navy) 0, var(--navy-0) 420px); }
   .sec--deep { background: var(--navy-0); }
-  .sec-head { display: flex; justify-content: space-between; align-items: end; gap: 28px 48px; margin-bottom: var(--head-gap); flex-wrap: wrap; }
+  .sec-head { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: end; gap: 24px clamp(32px, 6vw, 96px); margin-bottom: var(--head-gap); }
+  .sec-head .lead { justify-self: end; padding-bottom: 6px; }
   .sec-head .label { display: block; color: var(--gold); margin-bottom: 16px; }
   .sec--paper .sec-head .label { color: var(--gold-deep); }
-  .sec h2 { font-weight: 900; font-stretch: 116%; text-transform: uppercase; text-wrap: balance; font-size: clamp(32px, 4.4vw, 58px); line-height: .96; letter-spacing: -.03em; max-width: 760px; }
-  .lead { max-width: 420px; font-size: clamp(16px, 1.15vw, 18px); color: var(--muted); }
+  .sec h2 { font-weight: 800; text-wrap: balance; font-size: clamp(32px, 4.6vw, 62px); line-height: 1.02; letter-spacing: -.04em; max-width: 780px; }
+  .sec h2 em { font-size: 1.1em; line-height: .9; }
+  .lead { max-width: 430px; font-size: clamp(16px, 1.2vw, 18.5px); line-height: 1.55; color: var(--muted); text-wrap: pretty; }
   .sec--paper .lead { color: var(--muted-dark); }
 
   /* ---------- ofertas ---------- */
-  .offers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .offers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; perspective: 1400px; }
   .offer {
-    position: relative; display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line-dark); border-radius: 20px; overflow: hidden;
-    box-shadow: 0 1px 0 rgba(10,31,68,.04), 0 20px 40px -28px rgba(10,31,68,.35);
-    transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+    position: relative; display: flex; flex-direction: column; background: #fff; border-radius: 22px; overflow: hidden;
+    border: 1px solid rgba(10,31,68,.07);
+    box-shadow: 0 2px 4px rgba(10,31,68,.04), 0 26px 50px -26px rgba(10,31,68,.32);
+    transition: box-shadow .5s var(--ease), transform .6s var(--ease);
   }
-  .offer:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(10,31,68,.45); }
+  .offer:hover { box-shadow: 0 4px 10px rgba(10,31,68,.06), 0 50px 90px -34px rgba(10,31,68,.5); }
   .offer__media { position: relative; aspect-ratio: 900 / 440; overflow: hidden; background: var(--navy); }
-  .offer__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
-  .offer:hover .offer__media img { transform: scale(1.05); }
-  .offer__tag { position: absolute; left: 14px; top: 14px; padding: 5px 10px; border-radius: 999px; background: rgba(5,15,36,.72); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color: #fff; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
-  .offer__zoom { position: absolute; right: 12px; top: 12px; height: 34px; padding: 0 12px 0 10px; display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; background: rgba(255,255,255,.92); color: var(--ink-dark); font-size: 12.5px; font-weight: 700; opacity: .92; transition: opacity .3s, transform .3s var(--ease); }
+  .offer__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+  .offer:hover .offer__media img { transform: scale(1.06); }
+  .offer__tag { position: absolute; left: 14px; top: 14px; padding: 5px 10px; border-radius: 999px; background: rgba(5,15,36,.72); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: #fff; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+  .offer__zoom { position: absolute; right: 12px; top: 12px; height: 34px; padding: 0 12px 0 10px; display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; background: rgba(255,255,255,.94); color: var(--ink-dark); font-size: 12.5px; font-weight: 600; box-shadow: 0 6px 16px -6px rgba(0,0,0,.4); transition: transform .3s var(--ease); }
   .offer__zoom svg { width: 15px; height: 15px; }
-  .offer__zoom:hover { opacity: 1; transform: scale(1.04); }
-  .offer__body { display: flex; flex-direction: column; flex: 1; padding: 22px 22px 22px; }
-  .offer h3 { font-weight: 900; font-stretch: 118%; text-transform: uppercase; font-size: 30px; line-height: 1; letter-spacing: -.03em; }
-  .offer__credit { margin-top: 6px; color: var(--muted-dark); font-size: 14.5px; }
-  .offer__credit b { color: var(--ink-dark); font-weight: 800; }
-  .offer__price { margin-top: 18px; padding: 16px 0; border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
-  .offer__price span { font-size: 13px; color: var(--muted-dark); }
-  .offer__price strong { font-weight: 900; font-stretch: 112%; font-size: 26px; letter-spacing: -.02em; color: var(--navy); }
+  .offer__zoom:hover { transform: scale(1.05); }
+  .offer__body { display: flex; flex-direction: column; flex: 1; padding: 22px; }
+  .offer h3 { font-weight: 800; font-size: 28px; line-height: 1; letter-spacing: -.035em; }
+  .offer__credit { margin-top: 8px; color: var(--muted-dark); font-size: 14.5px; }
+  .offer__credit b { color: var(--ink-dark); font-weight: 700; }
+  .offer__price { margin-top: 18px; padding: 16px 0; border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); }
+  .offer__price span { display: block; font-size: 13px; color: var(--muted-dark); }
+  .offer__price strong { display: block; margin-top: 2px; font-weight: 800; font-size: 30px; line-height: 1.1; letter-spacing: -.035em; color: var(--navy); white-space: nowrap; }
   .offer__price strong sup { font-size: .5em; color: var(--gold-deep); vertical-align: .9em; }
-  .offer__specs { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0 20px; font-size: 13.5px; color: var(--muted-dark); }
-  .offer__specs b { display: block; color: var(--ink-dark); font-size: 15px; font-weight: 800; }
+  .offer__specs { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0 22px; font-size: 13px; line-height: 1.35; color: var(--muted-dark); }
+  .offer__specs b { display: block; color: var(--ink-dark); font-size: 14px; font-weight: 700; margin-bottom: 2px; white-space: nowrap; }
   .offer .btn { margin-top: auto; width: 100%; }
 
-  .offer--feature { grid-column: span 2; display: grid; grid-template-columns: 1.25fr 1fr; }
-  .offer--feature .offer__media { aspect-ratio: auto; min-height: 100%; }
-  .offer--feature .offer__media img { object-position: 42% 85%; }
-  .offer--feature .offer__body { padding: 30px; }
-  .offer--feature h3 { font-size: 46px; }
-  .offer--feature .offer__price strong { font-size: 36px; }
-  .offer--feature .offer__badge { display: inline-flex; align-self: flex-start; margin-bottom: 14px; padding: 6px 12px; border-radius: 999px; background: rgba(201,162,75,.16); color: var(--gold-deep); font-weight: 700; font-size: 12.5px; }
+  /* destaque: Polo em card escuro de largura total */
+  .offer--feature { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); background: linear-gradient(160deg, var(--navy-2), var(--navy) 55%, var(--navy-0)); color: var(--ink); border-color: rgba(201,162,75,.25); }
+  .offer--feature .offer__media { aspect-ratio: auto; height: 100%; min-height: 380px; }
+  .offer--feature .offer__media img { object-position: 52% 80%; }
+  .offer--feature .offer__media::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: linear-gradient(90deg, transparent 70%, rgba(10,31,68,.55)); pointer-events: none; }
+  .offer--feature .offer__body { padding: clamp(26px, 3.2vw, 44px); justify-content: center; }
+  .offer--feature h3 { font-size: clamp(42px, 4.4vw, 62px); color: #fff; }
+  .offer--feature .offer__credit { color: var(--muted); font-size: 16px; }
+  .offer--feature .offer__credit b { color: #fff; }
+  .offer--feature .offer__price { border-color: var(--line); margin-top: 22px; padding: 20px 0; }
+  .offer--feature .offer__price span { color: var(--muted); }
+  .offer--feature .offer__price strong { color: var(--gold); font-size: clamp(38px, 3.6vw, 50px); }
+  .offer--feature .offer__price strong sup { color: var(--gold-2); }
+  .offer--feature .offer__specs { color: var(--muted); font-size: 14px; }
+  .offer--feature .offer__specs b { color: #fff; font-size: 16px; }
+  .offer--feature .btn { margin-top: 4px; }
+  .offer__pill {
+    position: absolute; left: 18px; bottom: 18px; z-index: 2; display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px 10px 10px; border-radius: 14px; background: rgba(255,255,255,.96); color: var(--ink-dark);
+    box-shadow: 0 20px 40px -14px rgba(0,0,0,.55);
+  }
+  .offer__pill i { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--gold); color: var(--navy-0); flex: none; }
+  .offer__pill i svg { width: 18px; height: 18px; }
+  .offer__pill b { display: block; font-size: 13.5px; line-height: 1.2; }
+  .offer__pill small { display: block; font-size: 12px; color: var(--muted-dark); }
 
   .note { margin-top: 26px; max-width: 900px; font-size: 13px; color: var(--muted-dark); }
   .carousel-ui { display: none; }
@@ -226,7 +251,7 @@
   .lines-grid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
   .lines-grid .sec-head { position: sticky; top: 110px; display: block; margin: 0; }
   .lines-grid .lead { margin-top: 20px; }
-  .lines-grid .partner { display: inline-flex; align-items: center; gap: 10px; margin-top: 28px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 10px; color: var(--muted); font-size: 14px; }
+  .lines-grid .partner { display: inline-block; line-height: 1.5; margin-top: 28px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 10px; color: var(--muted); font-size: 14px; }
   .lines-grid .partner b { color: var(--ink); }
   .tech { list-style: none; border-top: 1px solid var(--line); }
   .tech li { position: relative; display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 20px; align-items: center; padding: 26px 0; border-bottom: 1px solid var(--line); }
@@ -244,17 +269,18 @@
   .steps { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; list-style: none; counter-reset: s; }
   .steps::before { content: ""; position: absolute; left: 30px; right: 30px; top: 30px; height: 2px; background: repeating-linear-gradient(90deg, rgba(169,131,47,.55) 0 8px, transparent 8px 16px); }
   .step { position: relative; }
-  .step__n { position: relative; z-index: 1; width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; background: var(--navy); color: var(--gold-2); font-weight: 900; font-stretch: 120%; font-size: 22px; box-shadow: 0 0 0 8px var(--paper); margin-bottom: 26px; }
+  .step__n { transition: transform .5s var(--ease), background .3s, color .3s; position: relative; z-index: 1; width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; background: var(--navy); color: var(--gold-2); font-weight: 800; font-size: 24px; box-shadow: 0 0 0 8px var(--paper); margin-bottom: 26px; }
   .step h3 { font-size: 20px; font-weight: 800; font-stretch: 106%; letter-spacing: -.01em; margin-bottom: 8px; }
+  .step:hover .step__n { transform: translateY(-6px); background: var(--gold); color: var(--navy-0); }
   .step p { color: var(--muted-dark); font-size: 15px; max-width: 280px; }
 
   .contemp { margin-top: clamp(48px, 6vw, 80px); display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 4vw, 56px); align-items: center; padding: clamp(26px, 4vw, 48px); border-radius: 24px; background: var(--navy); color: var(--ink); position: relative; overflow: hidden; }
   .contemp::before { content: ""; position: absolute; right: -10%; top: -40%; width: 60%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(closest-side, rgba(201,162,75,.2), transparent); pointer-events: none; }
-  .contemp h3 { font-size: clamp(24px, 2.4vw, 32px); font-weight: 900; font-stretch: 112%; line-height: 1.02; letter-spacing: -.02em; text-transform: uppercase; }
+  .contemp h3 { font-size: clamp(26px, 2.6vw, 36px); font-weight: 800; line-height: 1.05; letter-spacing: -.035em; }
   .contemp p { margin-top: 14px; color: var(--muted); }
   .contemp p b { color: var(--gold-2); font-weight: 600; }
   .flow { position: relative; list-style: none; display: grid; gap: 10px; }
-  .flow li { position: relative; display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: center; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.04); border: 1px solid var(--line); }
+  .flow li { position: relative; display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: center; padding: 14px 16px; border-radius: 14px; background: rgba(22,53,111,.6); border: 1px solid var(--line); box-shadow: 0 22px 40px -22px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.06); }
   .flow li svg { width: 22px; height: 22px; color: var(--gold); justify-self: center; }
   .flow li b { display: block; font-weight: 700; }
   .flow li span { display: block; font-size: 14px; color: var(--muted); }
@@ -276,22 +302,28 @@
   .perks { margin-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
   .perk { padding: 28px 26px 0 0; margin-right: 26px; }
   .perk + .perk { padding-left: 26px; border-left: 1px solid var(--line); }
-  .perk svg { width: 28px; height: 28px; color: var(--gold); margin-bottom: 16px; }
+  .perk svg { width: 50px; height: 50px; padding: 12px; border-radius: 14px; color: var(--gold); background: rgba(201,162,75,.1); border: 1px solid rgba(201,162,75,.25); margin-bottom: 18px; box-shadow: 0 16px 30px -16px rgba(0,0,0,.7); transition: transform .5s var(--ease); }
+  .perk:hover svg { transform: translateY(-6px) rotate(-6deg); }
   .perk h3 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
   .perk p { font-size: 14.5px; color: var(--muted); }
 
   /* ---------- quem atende ---------- */
-  .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(32px, 6vw, 90px); align-items: center; }
-  .about__photo { position: relative; aspect-ratio: 1 / 1.08; border-radius: 26px; overflow: hidden; box-shadow: 0 40px 80px -40px rgba(10,31,68,.55); }
-  .about__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
-  .about__photo figcaption { position: absolute; left: 16px; bottom: 16px; padding: 8px 12px; border-radius: 10px; background: rgba(5,15,36,.78); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color: #fff; font-size: 13px; }
-  .about blockquote { font-weight: 700; font-stretch: 104%; font-size: clamp(24px, 2.7vw, 36px); line-height: 1.18; letter-spacing: -.02em; text-wrap: pretty; }
-  .about blockquote::before { content: "“"; display: block; font-family: Georgia, serif; font-size: 90px; line-height: .6; color: var(--gold); margin-bottom: 8px; }
-  .about__sign { margin-top: 26px; color: var(--muted-dark); }
-  .about__sign b { color: var(--ink-dark); }
-  .checks { list-style: none; margin: 30px 0 34px; display: grid; gap: 12px; }
-  .checks li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; }
+  .about { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
+  .about blockquote { font-weight: 600; font-size: clamp(27px, 3.2vw, 46px); line-height: 1.12; letter-spacing: -.035em; text-wrap: pretty; }
+  .about blockquote em { color: var(--gold-deep); font-size: 1.08em; }
+  .about blockquote::before { content: "“"; display: block; font-family: var(--serif); font-size: 110px; line-height: .55; color: var(--gold); margin-bottom: 10px; }
+  .about__sign { display: flex; gap: 16px; align-items: flex-start; margin-top: 30px; color: var(--muted-dark); font-size: 15px; }
+  .about__sign b { color: var(--ink-dark); font-size: 16.5px; }
+  .about__dash { width: 40px; height: 2px; margin-top: 11px; background: var(--gold); flex: none; }
+  .about__card { padding: clamp(26px, 3vw, 38px); border-radius: 24px; background: #fff; border: 1px solid var(--line-dark); box-shadow: 0 2px 6px rgba(10,31,68,.05), 0 40px 80px -36px rgba(10,31,68,.45); }
+  .about__card-label { display: block; font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--gold-deep); }
+  .about__card .btn { width: 100%; }
+  .checks { list-style: none; margin: 22px 0 28px; display: grid; gap: 14px; }
+  .checks li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--line-dark); }
+  .checks li:last-child { border-bottom: 0; padding-bottom: 0; }
   .checks svg { width: 22px; height: 22px; flex: none; color: var(--gold-deep); margin-top: 1px; }
+  @keyframes floaty-card { 0%, 100% { transform: translate3d(0, 0, 0) rotate(0); } 50% { transform: translate3d(0, -10px, 0) rotate(-.4deg); } }
+  .float-card { animation: floaty-card 7s ease-in-out infinite; }
 
   /* ---------- simulação ---------- */
   .sim { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
@@ -301,6 +333,7 @@
   .sim__promise li { display: flex; gap: 12px; align-items: center; color: var(--muted); }
   .sim__promise svg { width: 22px; height: 22px; color: var(--gold); flex: none; }
   .sim__direct { margin-top: 32px; }
+  .sim__direct .btn { white-space: normal; text-align: left; line-height: 1.25; min-height: 54px; height: auto; padding: 12px 20px; max-width: 100%; }
   .form { padding: clamp(22px, 3vw, 36px); border-radius: 24px; background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03)); border: 1px solid var(--line); box-shadow: 0 40px 80px -40px rgba(0,0,0,.6); }
   .field { display: grid; gap: 8px; margin-bottom: 20px; }
   .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -354,8 +387,8 @@
   .final h2 { margin: 0 auto; max-width: 880px; }
   .final .lead { margin: 22px auto 0; max-width: 520px; }
   .final__actions { display: flex; justify-content: center; gap: 12px; margin-top: 36px; flex-wrap: wrap; }
-  .final__face { width: 76px; height: 76px; margin: 0 auto 28px; border-radius: 50%; overflow: hidden; border: 2px solid var(--gold); box-shadow: 0 0 0 6px rgba(201,162,75,.14); }
-  .final__face img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; }
+  .final__mark { width: 72px; height: 72px; margin: 0 auto 28px; border-radius: 22px; display: grid; place-items: center; background: linear-gradient(160deg, var(--gold-2), var(--gold)); color: var(--navy-0); box-shadow: 0 0 0 8px rgba(201,162,75,.12), 0 24px 50px -16px rgba(201,162,75,.6); }
+  .final__mark svg { width: 34px; height: 34px; }
   .foot { background: #030a19; border-top: 1px solid var(--line); padding: 48px 0 110px; color: var(--muted); font-size: 13px; }
   .foot__top { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-bottom: 26px; margin-bottom: 26px; border-bottom: 1px solid var(--line); font-size: 14.5px; }
   .foot__top b { color: var(--ink); }
@@ -381,30 +414,51 @@
   dialog.lb .lb__close { position: absolute; top: -14px; right: -14px; width: 44px; height: 44px; border-radius: 50%; background: #fff; color: var(--ink-dark); font-size: 24px; line-height: 1; box-shadow: 0 8px 20px rgba(0,0,0,.35); }
   dialog.lb .btn { width: 100%; margin-top: 12px; }
 
-  /* ---------- revelações (só com movimento ligado) ---------- */
-  .anim .rv-mask { clip-path: inset(0 0 100% 0); transform: translateY(24px); transition: clip-path 1s var(--ease), transform 1s var(--ease); }
-  .anim .rv-mask.in { clip-path: inset(0 0 -10% 0); transform: none; }
-  .anim .rv-clip { clip-path: inset(12% 12% 12% 12% round 28px); transition: clip-path 1.2s var(--ease); }
+  /* ---------- motion ---------- */
+  @keyframes floaty { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, -9px, 0); } }
+  @keyframes seal { 0%, 100% { transform: rotate(8deg) translate3d(0, 0, 0); } 50% { transform: rotate(2deg) translate3d(0, -10px, 0); } }
+  .float { animation: floaty 6s ease-in-out infinite; animation-delay: var(--fd, 0s); }
+  .float-seal { animation: seal 7s ease-in-out infinite; }
+
+  /* entradas: opacity + translate (não brigam com o transform dos efeitos) */
+  .anim .rv-up { opacity: 0; translate: 0 26px; transition: opacity .9s var(--ease), translate .9s var(--ease); transition-delay: var(--d, 0s); }
+  .anim .rv-up.in { opacity: 1; translate: 0 0; }
+  .anim .rv-mask { clip-path: inset(0 0 100% 0); translate: 0 30px; transition: clip-path 1.1s var(--ease), translate 1.1s var(--ease); }
+  .anim .rv-mask.in { clip-path: inset(-20% -5% -20% -5%); translate: 0 0; }
+  .anim .rv-clip { clip-path: inset(10% 10% 10% 10% round 28px); transition: clip-path 1.3s var(--ease); }
   .anim .rv-clip.in { clip-path: inset(0 0 0 0 round 0); }
-  .anim .rv-up { opacity: 0; transform: translateY(26px); transition: opacity .8s var(--ease), transform .8s var(--ease); transition-delay: var(--d, 0s); }
-  .anim .rv-up.in { opacity: 1; transform: none; }
-  .anim .tech li { --d: 0s; }
+  .anim .rv-stagger > * { opacity: 0; translate: 0 34px; transition: opacity .9s var(--ease), translate .9s var(--ease), box-shadow .5s var(--ease), transform .6s var(--ease); }
+  .anim .rv-stagger.in > * { opacity: 1; translate: 0 0; }
+  .anim .rv-stagger.in > :nth-child(2) { transition-delay: .08s, .08s, 0s, 0s; }
+  .anim .rv-stagger.in > :nth-child(3) { transition-delay: .16s, .16s, 0s, 0s; }
+  .anim .rv-stagger.in > :nth-child(4) { transition-delay: .24s, .24s, 0s, 0s; }
+  .anim .rv-stagger.in > :nth-child(5) { transition-delay: .32s, .32s, 0s, 0s; }
   .anim .tech.rv-lines li::after { content: ""; position: absolute; left: 0; top: -1px; height: 1px; width: 100%; background: var(--line); transform: scaleX(0); transform-origin: left; transition: transform 1s var(--ease); transition-delay: var(--d); }
   .anim .tech.rv-lines.in li::after { transform: scaleX(1); }
+  /* navegador sem a propriedade translate: entra só com opacidade */
+  @supports not (translate: 0 0) {
+    .anim .rv-up, .anim .rv-mask, .anim .rv-stagger > * { translate: none; }
+  }
+  /* navegador antigo sem aspect-ratio (iOS < 15) */
+  @supports not (aspect-ratio: 1) {
+    .offer__media img, .portrait__frame img, .about__photo img { height: auto; }
+  }
 
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .strip__track { animation-duration: 90s; }
   }
 
   /* ---------- tablet ---------- */
   @media (max-width: 1080px) {
     .menu { display: none; }
     .offers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .offer--feature { grid-column: span 2; }
-    .offers .offer:last-child { grid-column: span 2; }
+    .sec-head .lead { justify-self: start; }
     .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; }
     .steps::before { display: none; }
     .perks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .sim, .faq, .lines-grid { grid-template-columns: 1fr; }
+    .lines-grid .sec-head, .faq .sec-head { position: static; }
+    .about { grid-template-columns: 1fr; }
     .perk + .perk { padding-left: 0; border-left: 0; }
     .perk { border-bottom: 1px solid var(--line); padding-bottom: 26px; }
     .ticket { left: -24px; }
@@ -420,7 +474,9 @@
     .topbar .btn { width: 44px; padding: 0; background: var(--wa); color: #06260f; box-shadow: none; }
     .hero .wrap { grid-template-columns: 1fr; gap: 40px; padding-top: 30px; padding-bottom: 72px; }
     .chip { font-size: 12.5px; margin-bottom: 20px; }
-    .hero h1 { font-size: clamp(36px, 10.4vw, 46px); }
+    .hero h1 { font-size: clamp(34px, 10.6vw, 50px); }
+    .sec-head { grid-template-columns: 1fr; }
+    .sec-head .lead { justify-self: start; padding-bottom: 0; }
     .hero__lead { margin-top: 18px; font-size: 16.5px; }
     .hero__actions { margin-top: 26px; }
     .hero__actions .btn { width: 100%; }
@@ -441,14 +497,24 @@
     .sec h2 { font-size: clamp(30px, 8.6vw, 40px); }
     .sec-head { gap: 16px; }
 
-    .offers { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 calc(var(--pad) * -1); padding: 4px var(--pad) 18px; scrollbar-width: none; }
+    .offers { display: flex; gap: 12px; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; margin: 0 calc(var(--pad) * -1); padding: 6px var(--pad) 26px; scroll-padding: 0 var(--pad); scrollbar-width: none; perspective: none; }
     .offers::-webkit-scrollbar { display: none; }
-    .offer, .offer--feature { flex: 0 0 84%; scroll-snap-align: center; display: flex; }
-    .offer--feature .offer__media { aspect-ratio: 900 / 440; min-height: 0; }
-    .offer--feature .offer__body { padding: 22px; }
-    .offer--feature h3 { font-size: 30px; }
-    .offer--feature .offer__price strong { font-size: 26px; }
-    .offer:hover { transform: none; }
+    .offer, .offer--feature { flex: 0 0 84%; max-width: 340px; scroll-snap-align: start; display: flex; flex-direction: column; }
+    .offer--feature .offer__media { aspect-ratio: 900 / 440; height: auto; min-height: 0; }
+    .offer--feature .offer__media::after { display: none; }
+    .offer--feature .offer__body { padding: 22px; justify-content: flex-start; }
+    .offer--feature h3 { font-size: 28px; }
+    .offer--feature .offer__credit { font-size: 14.5px; }
+    .offer--feature .offer__price { margin-top: 18px; padding: 16px 0; }
+    .offer--feature .offer__price strong { font-size: 30px; }
+    .offer--feature .offer__specs { font-size: 13px; }
+    .offer--feature .offer__specs b { font-size: 14.5px; }
+    .offer--feature .btn { margin-top: auto; }
+    .offer__pill { left: 10px; bottom: 10px; padding: 7px 10px 7px 7px; border-radius: 11px; gap: 8px; }
+    .offer__pill i { width: 26px; height: 26px; border-radius: 8px; }
+    .offer__pill i svg { width: 14px; height: 14px; }
+    .offer__pill b { font-size: 12px; }
+    .offer__pill small { display: none; }
     .carousel-ui { display: flex; align-items: center; justify-content: space-between; margin-top: 6px; }
     .carousel-ui .count { font-family: var(--mono); font-size: 13px; color: var(--muted-dark); }
     .dots { display: flex; gap: 6px; }
@@ -456,6 +522,7 @@
     .dots i.on { width: 22px; background: var(--navy); }
 
     .lines-grid, .sim, .faq, .about { grid-template-columns: 1fr; }
+    .about blockquote::before { font-size: 84px; }
     .lines-grid .sec-head, .faq .sec-head { position: static; }
     .tech li { grid-template-columns: 44px minmax(0, 1fr); gap: 14px; padding: 22px 0; }
     .tech__ico { width: 44px; height: 44px; border-radius: 12px; }
@@ -482,13 +549,45 @@
     .perks { grid-template-columns: 1fr; }
     .perk { margin-right: 0; padding-right: 0; }
 
-    .about__photo { aspect-ratio: 4 / 3.4; }
     .field-row { grid-template-columns: 1fr; gap: 0; }
     .qa summary { font-size: 16.5px; }
     .qa p { padding-right: 0; }
     .final__actions .btn { width: 100%; }
-    .wa-float { right: 14px; bottom: 14px; height: 56px; width: 56px; padding: 0; justify-content: center; }
+    .wa-float { right: calc(14px + env(safe-area-inset-right)); bottom: calc(14px + env(safe-area-inset-bottom)); height: 56px; width: 56px; padding: 0; justify-content: center; }
     .wa-float span { display: none; }
+  }
+  /* celulares pequenos (iPhone SE, Galaxy A antigos: 320 a 380px) */
+  @media (max-width: 380px) {
+    :root { --pad: 16px; }
+    .brand small { display: none; }
+    .brand strong { font-size: 14.5px; }
+    .chip { font-size: 12px; padding: 7px 12px 7px 10px; }
+    .hero__meta { grid-template-columns: 1fr; }
+    .hero__meta > div { display: flex; align-items: baseline; gap: 10px; padding: 12px 0; margin: 0; border-right: 0; border-bottom: 1px solid var(--line); }
+    .hero__meta span { margin: 0; font-size: 13px; }
+    .btn { padding: 0 18px; font-size: 15px; white-space: normal; text-align: center; line-height: 1.2; }
+    .seal { width: 76px; height: 76px; }
+    .seal b { font-size: 22px; }
+    .ticket { grid-template-columns: 56px 1fr; gap: 10px; }
+    .ticket img { width: 56px; height: 42px; }
+    .portrait__name { bottom: 74px; left: 16px; right: 16px; }
+    .portrait__name strong { font-size: 16.5px; }
+    .portrait__name span { font-size: 13.5px; }
+    .offer, .offer--feature { flex-basis: 88%; }
+    .offer__price strong { font-size: 26px; }
+    .offer__specs { grid-template-columns: 1fr; gap: 8px; }
+    .chips span { padding: 0 12px; font-size: 13.5px; }
+    .qa summary { font-size: 15.5px; }
+  }
+  /* celular deitado */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .topbar { position: relative; }
+    .hero .wrap { padding-top: 24px; }
+  }
+  /* entalhe e barra do iPhone */
+  @supports (padding: max(0px)) {
+    .wrap { padding-left: max(var(--pad), env(safe-area-inset-left)); padding-right: max(var(--pad), env(safe-area-inset-right)); }
+    .foot { padding-bottom: calc(110px + env(safe-area-inset-bottom)); }
   }
 </style>
 </head>
@@ -520,7 +619,7 @@
 <header class="topbar">
   <div class="wrap">
     <a class="brand" href="#topo" aria-label="Henrique Oliveira, consultor de consórcios">
-      <span class="brand__mark"><img src="img/henrique.jpg" alt="" width="38" height="38"></span>
+      <span class="brand__mark" aria-hidden="true"></span>
       <span><strong>Henrique Oliveira</strong><small>Consultor de consórcios</small></span>
     </a>
     <nav class="menu" aria-label="Seções">
@@ -542,7 +641,7 @@
     <div class="wrap">
       <div>
         <span class="chip rv-up"><i></i>Consórcio Volkswagen com a Embracon</span>
-        <h1 class="rv-mask">Seu próximo Volkswagen, <em>sem juros</em> e no seu ritmo.</h1>
+        <h1 class="rv-mask">Seu próximo Volkswagen, <em>sem juros</em> e&nbsp;no seu ritmo.</h1>
         <p class="hero__lead rv-up" style="--d:.1s">Eu sou o Henrique. Monto com você um plano com a <strong>parcela que cabe no seu mês</strong> e explico taxa, prazo, sorteio e lance antes de você assinar qualquer coisa.</p>
         <div class="hero__actions rv-up" style="--d:.18s">
           <a class="btn btn--gold" data-wa="Olá, Henrique! Vim pelo seu site e quero uma simulação de consórcio." href="#">
@@ -551,9 +650,9 @@
           <a class="btn btn--line" href="#ofertas">Ver as ofertas do mês</a>
         </div>
         <div class="hero__meta rv-up" style="--d:.26s">
-          <div><strong>R$ 973,50<sup>*</sup></strong><span>parcelas a partir de</span></div>
-          <div><strong>50%</strong><span>de redutor até a contemplação</span></div>
-          <div><strong>100 meses</strong><span>de prazo, no máximo</span></div>
+          <div><strong data-count="973.5" data-dec="2" data-pre="R$ ">R$ 973,50<sup>*</sup></strong><span>parcelas a partir de</span></div>
+          <div><strong data-count="50" data-suf="%">50%</strong><span>de redutor até a contemplação</span></div>
+          <div><strong data-count="100" data-suf=" meses">100 meses</strong><span>de prazo, no máximo</span></div>
         </div>
       </div>
 
@@ -562,8 +661,8 @@
           <img src="img/henrique.jpg" alt="Henrique Miranda de Oliveira, consultor de consórcios" width="960" height="1280" fetchpriority="high">
         </div>
         <figcaption class="portrait__name"><strong>Henrique Miranda de Oliveira</strong><span>Quem vai te atender no WhatsApp</span></figcaption>
-        <div class="seal" aria-hidden="true"><div><b>0%</b><span>de juros no<br>consórcio</span></div></div>
-        <a class="ticket" href="#ofertas" aria-label="Ver a oferta do Polo">
+        <div class="seal float-seal" aria-hidden="true"><div><b>0%</b><span>de juros no<br>consórcio</span></div></div>
+        <a class="ticket float" style="--fd:-1s" href="#ofertas" aria-label="Ver a oferta do Polo">
           <img src="img/polo.webp" alt="" width="74" height="52">
           <div><b>Polo</b><small>Crédito de R$ 120 mil, parcelas a partir de <em>R$ 973,50*</em></small></div>
         </a>
@@ -584,32 +683,32 @@
       <header class="sec-head">
         <div>
           <span class="label">Ofertas do Consórcio Volkswagen</span>
-          <h2 class="rv-mask">Escolha o carro. A parcela a gente planeja.</h2>
+          <h2 class="rv-mask">Escolha o carro. A parcela a gente <em>planeja.</em></h2>
         </div>
         <p class="lead">Condições divulgadas pela linha Volkswagen com a Embracon. Toque em “Ver card” para ver a peça oficial e me chame para simular o seu plano.</p>
       </header>
 
-      <div class="offers" id="offers">
-        <article class="offer offer--feature rv-up">
+      <div class="offers rv-stagger" id="offers">
+        <article class="offer offer--feature">
           <div class="offer__media">
             <img src="img/polo.webp" alt="Volkswagen Polo vermelho" width="900" height="440" loading="lazy">
             <span class="offer__tag">Hatch</span>
             <button class="offer__zoom" data-card="img/card-polo.webp" data-model="Polo"><svg><use href="#i-zoom"/></svg>Ver card</button>
+            <span class="offer__pill float" style="--fd:-2s"><i><svg><use href="#i-down"/></svg></i><span><b>Menor parcela da linha</b><small>a partir de R$ 973,50*</small></span></span>
           </div>
           <div class="offer__body">
-            <span class="offer__badge">Menor parcela da linha</span>
             <h3>Polo</h3>
             <p class="offer__credit">Crédito de <b>R$ 120 mil</b></p>
             <div class="offer__price"><span>Parcelas a partir de</span><strong>R$ 973,50<sup>*</sup></strong></div>
             <ul class="offer__specs">
-              <li><b>50% de redutor</b>na parcela até a contemplação</li>
+              <li><b>50% de redutor</b>até a contemplação</li>
               <li><b>Até 100 meses</b>de prazo</li>
             </ul>
-            <a class="btn btn--navy" data-wa="Olá, Henrique! Quero simular o consórcio do Polo (crédito de R$ 120 mil)." href="#"><svg><use href="#i-wa"/></svg>Simular o Polo</a>
+            <a class="btn btn--gold" data-wa="Olá, Henrique! Quero simular o consórcio do Polo (crédito de R$ 120 mil)." href="#"><svg><use href="#i-wa"/></svg>Simular o Polo</a>
           </div>
         </article>
 
-        <article class="offer rv-up" style="--d:.08s">
+        <article class="offer">
           <div class="offer__media">
             <img src="img/tera.webp" alt="Volkswagen Tera azul" width="900" height="440" loading="lazy">
             <span class="offer__tag">SUV</span>
@@ -627,7 +726,7 @@
           </div>
         </article>
 
-        <article class="offer rv-up">
+        <article class="offer">
           <div class="offer__media">
             <img src="img/nivus.webp" alt="Volkswagen Nivus azul" width="900" height="440" loading="lazy">
             <span class="offer__tag">SUV</span>
@@ -645,7 +744,7 @@
           </div>
         </article>
 
-        <article class="offer rv-up" style="--d:.08s">
+        <article class="offer">
           <div class="offer__media">
             <img src="img/tcross.webp" alt="Volkswagen T-Cross branco" width="900" height="440" loading="lazy">
             <span class="offer__tag">SUV</span>
@@ -663,7 +762,7 @@
           </div>
         </article>
 
-        <article class="offer rv-up" style="--d:.16s">
+        <article class="offer">
           <div class="offer__media">
             <img src="img/taos.webp" alt="Volkswagen Taos prata" width="900" height="440" loading="lazy">
             <span class="offer__tag">SUV</span>
@@ -692,7 +791,7 @@
     <div class="wrap lines-grid">
       <header class="sec-head">
         <span class="label">Outras linhas de consórcio</span>
-        <h2 class="rv-mask">Não é carro? Também tem plano.</h2>
+        <h2 class="rv-mask">Não é carro? Também tem <em>plano.</em></h2>
         <p class="lead">Apresento crédito planejado para outros bens de valor. Conte o que você quer e eu mostro as condições disponíveis.</p>
         <span class="partner">Linhas com a <b>Porto Seguro</b> e o <b>Porto Bank</b></span>
       </header>
@@ -727,7 +826,7 @@
       <header class="sec-head">
         <div>
           <span class="label">Como funciona</span>
-          <h2 class="rv-mask">Do primeiro papo à carta de crédito.</h2>
+          <h2 class="rv-mask">Do primeiro papo à <em>carta de crédito.</em></h2>
         </div>
         <p class="lead">Um caminho claro, com você decidindo em cada etapa. Sem pressa e sem letra miúda.</p>
       </header>
@@ -741,18 +840,18 @@
       <div class="contemp rv-up">
         <div>
           <span class="label" style="color:var(--gold)">Antes de contratar</span>
-          <h3 style="margin-top:14px">Consórcio não é crédito imediato.</h3>
+          <h3 style="margin-top:14px">Consórcio não é crédito <em>imediato.</em></h3>
           <p>Ao contratar, você entra em um grupo e passa a concorrer à contemplação todos os meses, por <b>sorteio ou lance</b>, conforme as regras do grupo e <b>sem garantia de data</b>. A carta de crédito só pode ser usada depois da contemplação e das exigências do contrato.</p>
         </div>
         <ol class="flow" aria-label="Como funciona a contemplação">
-          <li><svg><use href="#i-users"/></svg><div><b>Você entra no grupo</b><span>Paga as parcelas mensais, com redutor se o plano tiver.</span></div></li>
+          <li class="float"><svg><use href="#i-users"/></svg><div><b>Você entra no grupo</b><span>Paga as parcelas mensais, com redutor se o plano tiver.</span></div></li>
           <li class="flow__split">
             <ul class="split">
-              <li><svg><use href="#i-dice"/></svg><div><b>Sorteio</b><span>todo mês, na assembleia</span></div></li>
-              <li><svg><use href="#i-hammer"/></svg><div><b>Lance</b><span>opcional, sem garantia</span></div></li>
+              <li class="float" style="--fd:-1.5s"><svg><use href="#i-dice"/></svg><div><b>Sorteio</b><span>todo mês, na assembleia</span></div></li>
+              <li class="float" style="--fd:-3s"><svg><use href="#i-hammer"/></svg><div><b>Lance</b><span>opcional, sem garantia</span></div></li>
             </ul>
           </li>
-          <li class="is-key"><svg><use href="#i-key"/></svg><div><b>Contemplado: carta de crédito liberada</b><span>Depois disso, a parcela segue as regras do contrato.</span></div></li>
+          <li class="is-key float" style="--fd:-4.5s"><svg><use href="#i-key"/></svg><div><b>Contemplado: carta de crédito liberada</b><span>Depois disso, a parcela segue as regras do contrato.</span></div></li>
         </ol>
       </div>
     </div>
@@ -764,7 +863,7 @@
       <header class="sec-head">
         <div>
           <span class="label">Por que consórcio</span>
-          <h2 class="rv-mask">Consórcio ou financiamento?</h2>
+          <h2 class="rv-mask">Consórcio ou <em>financiamento?</em></h2>
         </div>
         <p class="lead">A diferença, sem rodeio. O consórcio é para quem planeja a compra; quem precisa do bem amanhã deve olhar o financiamento.</p>
       </header>
@@ -788,20 +887,19 @@
   <!-- quem atende -->
   <section class="sec sec--paper panel" id="quem-atende">
     <div class="wrap about">
-      <figure class="about__photo rv-clip">
-        <img src="img/henrique.jpg" alt="Henrique Miranda de Oliveira sorrindo" width="960" height="1280" loading="lazy">
-        <figcaption>Henrique Miranda de Oliveira</figcaption>
-      </figure>
       <div>
         <span class="label" style="color:var(--gold-deep)">Quem vai te atender</span>
-        <blockquote class="rv-up" style="margin-top:18px">Meu trabalho é traduzir as regras do consórcio para a sua realidade, para que você decida com segurança, sem pressa e sem surpresas.</blockquote>
-        <p class="about__sign"><b>Henrique Miranda de Oliveira</b>, consultor comercial e especialista em consórcios de veículos, imóveis e bens de alto valor.</p>
+        <blockquote class="rv-up" style="margin-top:18px">Meu trabalho é traduzir as regras do consórcio para a sua realidade, para que você decida com <em>segurança</em>, sem pressa e sem surpresas.</blockquote>
+        <p class="about__sign"><span class="about__dash"></span><span><b>Henrique Miranda de Oliveira</b><br>Consultor comercial e especialista em consórcios de veículos, imóveis e bens de alto valor.</span></p>
+      </div>
+      <div class="about__card float-card rv-up" style="--d:.1s">
+        <span class="about__card-label">Atendimento direto comigo</span>
         <ul class="checks">
           <li><svg><use href="#i-check"/></svg>Explicação clara de taxas, prazos e regras</li>
           <li><svg><use href="#i-check"/></svg>Propostas alinhadas ao seu planejamento</li>
           <li><svg><use href="#i-check"/></svg>Acompanhamento direto pelo WhatsApp</li>
         </ul>
-        <a class="btn btn--navy" data-wa="Olá, Henrique! Vim pelo seu site e quero conversar sobre consórcio." href="#"><svg><use href="#i-wa"/></svg>Conversar com o Henrique</a>
+        <a class="btn btn--gold" data-wa="Olá, Henrique! Vim pelo seu site e quero conversar sobre consórcio." href="#"><svg><use href="#i-wa"/></svg>Conversar com o Henrique</a>
       </div>
     </div>
   </section>
@@ -811,7 +909,7 @@
     <div class="wrap sim">
       <header class="sec-head">
         <span class="label">Simulação sem compromisso</span>
-        <h2 class="rv-mask">Receba sua simulação no WhatsApp.</h2>
+        <h2 class="rv-mask">Receba sua simulação <em>no WhatsApp.</em></h2>
         <p class="lead">Leva menos de um minuto. Eu respondo pessoalmente com as opções e explico cada detalhe.</p>
         <ul class="sim__promise">
           <li><svg><use href="#i-check"/></svg>Sem custo e sem compromisso</li>
@@ -875,7 +973,7 @@
     <div class="wrap faq">
       <header class="sec-head">
         <span class="label">Dúvidas</span>
-        <h2 class="rv-mask">Perguntas frequentes.</h2>
+        <h2 class="rv-mask">Perguntas <em>frequentes.</em></h2>
         <p class="lead">As respostas que eu mais dou no WhatsApp. Ficou alguma dúvida? Me chama.</p>
         <a class="btn btn--navy" data-wa="Olá, Henrique! Tenho uma dúvida sobre consórcio." href="#"><svg><use href="#i-wa"/></svg>Perguntar ao Henrique</a>
       </header>
@@ -894,8 +992,8 @@
   <!-- CTA final -->
   <section class="sec final panel">
     <div class="wrap">
-      <div class="final__face"><img src="img/henrique.jpg" alt="" width="76" height="76" loading="lazy"></div>
-      <h2 class="rv-mask">Vamos planejar a sua próxima conquista?</h2>
+      <div class="final__mark float" aria-hidden="true"><svg><use href="#i-wa"/></svg></div>
+      <h2 class="rv-mask">Vamos planejar a sua próxima <em>conquista?</em></h2>
       <p class="lead">Me conte o que você quer conquistar. Eu retorno pelo WhatsApp com as opções, sem compromisso.</p>
       <div class="final__actions">
         <a class="btn btn--gold" data-wa="Olá, Henrique! Vim pelo seu site e quero uma simulação de consórcio." href="#"><svg><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
@@ -942,14 +1040,54 @@
   document.getElementById('ano').textContent = new Date().getFullYear();
 
   // revelações (só com movimento ligado)
-  var calmo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!calmo && 'IntersectionObserver' in window) {
+  // observa o "pai" dos elementos com recorte (o recorte esconderia a própria interseção)
+  if ('IntersectionObserver' in window) {
     document.documentElement.classList.add('anim');
+    var alvos = [].slice.call(document.querySelectorAll('.rv-mask, .rv-clip, .rv-up, .rv-lines, .rv-stagger'));
     var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: .12 });
-    document.querySelectorAll('.rv-mask, .rv-clip, .rv-up, .rv-lines').forEach(function (el) { io.observe(el); });
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target._rv.forEach(function (el) { el.classList.add('in'); });
+        io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0 });
+    alvos.forEach(function (el) {
+      var obs = el.matches('.rv-mask, .rv-clip') ? el.parentElement : el;
+      (obs._rv = obs._rv || []).push(el);
+      io.observe(obs);
+    });
+    // segurança: nada fica escondido se algo falhar
+    setTimeout(function () {
+      alvos.forEach(function (el) { if (el.getBoundingClientRect().top < innerHeight) el.classList.add('in'); });
+    }, 2500);
   }
+
+  // inclinação 3D dos cards de oferta (só com mouse)
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    document.querySelectorAll('.offer').forEach(function (c) {
+      c.addEventListener('pointermove', function (e) {
+        var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        var k = c.classList.contains('offer--feature') ? 3 : 7;
+        c.style.transform = 'translateY(-8px) rotateX(' + (-y * k) + 'deg) rotateY(' + (x * k) + 'deg)';
+      });
+      c.addEventListener('pointerleave', function () { c.style.transform = ''; });
+    });
+  }
+
+  // números do herói contando
+  document.querySelectorAll('[data-count]').forEach(function (el) {
+    var alvo = +el.getAttribute('data-count'), dec = +(el.getAttribute('data-dec') || 0), pre = el.getAttribute('data-pre') || '', suf = el.getAttribute('data-suf') || '';
+    var fmt = function (v) { return pre + v.toLocaleString('pt-BR', { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf; };
+    var t0 = null;
+    function passo(t) {
+      if (!t0) t0 = t;
+      var k = Math.min(1, (t - t0) / 1600), e = 1 - Math.pow(1 - k, 3);
+      el.firstChild.nodeValue = fmt(alvo * e);
+      if (k < 1) requestAnimationFrame(passo); else el.firstChild.nodeValue = fmt(alvo);
+    }
+    el.firstChild.nodeValue = fmt(0);
+    setTimeout(function () { requestAnimationFrame(passo); }, 500);
+  });
 
   // botão flutuante: aparece depois do herói, some na simulação
   var flt = document.getElementById('waFloat'), hero = document.querySelector('.hero'), sim = document.getElementById('simulacao');
